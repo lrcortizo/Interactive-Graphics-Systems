@@ -1,0 +1,2 @@
+# SGI
+Sistemas Gráficos Interactivos
