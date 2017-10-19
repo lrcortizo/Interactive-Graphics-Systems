@@ -1,1 +1,1 @@
-P2.- Introducción a OpenGL.
+P2.- Introduccion a OpenGL.
