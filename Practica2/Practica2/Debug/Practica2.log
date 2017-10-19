@@ -1,1 +1,3 @@
-﻿LINK : fatal error LNK1104: no se puede abrir el archivo 'glut32.lib'
+﻿  cuadrado.c
+  Practica2.vcxproj -> D:\INGENIERÍA INFORMÁTICA\MASTER CURSO 1º\CUATRIMESTRE 1\SGI\SGI\Practica2\Debug\Practica2.exe
+  Practica2.vcxproj -> D:\INGENIERÍA INFORMÁTICA\MASTER CURSO 1º\CUATRIMESTRE 1\SGI\SGI\Practica2\Debug\Practica2.pdb (Partial PDB)

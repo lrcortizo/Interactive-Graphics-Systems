@@ -1,4 +1,4 @@
-#include "glut.h"
+#include "Practica2/glut.h"
 #include <stdio.h>
 #include "cuadrado.h"
 
@@ -73,7 +73,7 @@ void Dibuja(void)
 }
 
 /******************************************************************/
-/* Funcion de dibujado ejercicio 3                                */
+/* Funcion de dibujado ejercicio 3 primera parte                  */
 /* Parametros: Ninguno                                            */
 /* Salida: Ninguna                                                */
 /******************************************************************/
@@ -133,7 +133,11 @@ void Dibuja2(void)
 
 }
 
-
+/******************************************************************/
+/* Funcion de dibujado ejercicio 3 segunda parte                  */
+/* Parametros: Ninguno                                            */
+/* Salida: Ninguna                                                */
+/******************************************************************/
 void Dibuja3(void)
 
 {
@@ -142,8 +146,8 @@ void Dibuja3(void)
 	/* Borra el buffer de color */
 	glClear(GL_COLOR_BUFFER_BIT);
 
-	//Cuadrados negro y verde
-	glColor3f(0.0f, 0.0f, 0.0f);
+	//Cuadrados azul y verde
+	glColor3f(0.0f, 0.0f, 1.0f);
 
 	glBegin(GL_POLYGON);
 	glVertex2f(-0.5f, -0.5f);
@@ -155,37 +159,37 @@ void Dibuja3(void)
 	glColor3f(0.0f, 1.0f, 0.0f);
 
 	glBegin(GL_POLYGON);
-	glVertex2f(-0.5f, -0.5f);
-	glVertex2f(-0.5f, 0.3f);
+	glVertex2f(-0.55f, -0.55f);
+	glVertex2f(-0.55f, 0.3f);
 	glVertex2f(0.3f, 0.3f);
-	glVertex2f(0.3f, -0.5f);
+	glVertex2f(0.3f, -0.55f);
 	glEnd();
 
-	glColor3f(0.0f, 0.0f, 0.0f);
+	glColor3f(0.0f, 0.0f, 1.0f);
 
 	glBegin(GL_POLYGON);
-	glVertex2f(-0.5f, -0.5f);
-	glVertex2f(-0.5f, 0.1f);
+	glVertex2f(-0.6f, -0.6f);
+	glVertex2f(-0.6f, 0.1f);
 	glVertex2f(0.1f, 0.1f);
-	glVertex2f(0.1f, -0.5f);
+	glVertex2f(0.1f, -0.6f);
 	glEnd();
 
 	glColor3f(0.0f, 1.0f, 0.0f);
 
 	glBegin(GL_POLYGON);
-	glVertex2f(-0.5f, -0.5f);
-	glVertex2f(-0.5f, -0.1f);
+	glVertex2f(-0.65f, -0.65f);
+	glVertex2f(-0.65f, -0.1f);
 	glVertex2f(-0.1f, -0.1f);
-	glVertex2f(-0.1f, -0.5f);
+	glVertex2f(-0.1f, -0.65f);
 	glEnd();
 
-	glColor3f(0.0f, 0.0f, 0.0f);
+	glColor3f(0.0f, 0.0f, 1.0f);
 
 	glBegin(GL_POLYGON);
-	glVertex2f(-0.5f, -0.5f);
-	glVertex2f(-0.5f, -0.3f);
+	glVertex2f(-0.7f, -0.7f);
+	glVertex2f(-0.7f, -0.3f);
 	glVertex2f(-0.3f, -0.3f);
-	glVertex2f(-0.3f, -0.5f);
+	glVertex2f(-0.3f, -0.7f);
 	glEnd();
 }
 
@@ -225,7 +229,7 @@ void AbreVentana (int numeroArgumentos, char ** listaArgumentos)
 	glutInit(&numeroArgumentos, listaArgumentos);
 	glutInitDisplayMode (GLUT_SINGLE | GLUT_RGB);
 	glutInitWindowSize (500, 500);
-	glutInitWindowPosition (100, 100);
+	glutInitWindowPosition (0, 100);
 	glutCreateWindow (listaArgumentos[0]);
 	glutDisplayFunc (Dibuja);
 	glutReshapeFunc (TamanyoVentana);
@@ -238,7 +242,7 @@ void AbreVentana2(int numeroArgumentos, char ** listaArgumentos)
 	glutInit(&numeroArgumentos, listaArgumentos);
 	glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
 	glutInitWindowSize(500, 500);
-	glutInitWindowPosition(100, 100);
+	glutInitWindowPosition(400, 100);
 	glutCreateWindow(listaArgumentos[0]);
 	glutDisplayFunc(Dibuja2);
 	glutReshapeFunc(TamanyoVentana);
@@ -251,7 +255,7 @@ void AbreVentana3(int numeroArgumentos, char ** listaArgumentos)
 	glutInit(&numeroArgumentos, listaArgumentos);
 	glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
 	glutInitWindowSize(500, 500);
-	glutInitWindowPosition(100, 100);
+	glutInitWindowPosition(800, 100);
 	glutCreateWindow(listaArgumentos[0]);
 	glutDisplayFunc(Dibuja3);
 	glutReshapeFunc(TamanyoVentana);
