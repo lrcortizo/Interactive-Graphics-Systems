@@ -130,9 +130,10 @@ void Dibuja (void)
 	glLoadIdentity();
 	glRotated (beta, 1.0,0.0,0.0);
     glRotated (-alfa, 0.0,1.0,0.0);
-	igCreateQuadricObject(50, 50, 1.0, 1.0, 1.0, 1.0, 1.0);
+	//igCreateQuadricObject(50, 50, 1.0, 1.0, 1.0, 1.0, 1.0);
 	/* Objetos */
 	//glutWireDodecahedron();
+	igWireCubo();
 
 	glFlush();
 }

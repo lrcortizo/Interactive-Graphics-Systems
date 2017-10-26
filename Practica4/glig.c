@@ -115,9 +115,9 @@ void igCreateQuadricObject(int pu, int pv, float uMax, float vMax, float R, floa
 	u = 0.0;
 	inc_u = uMax / pu;
 	inc_v = vMax / pv;
-	for (j = 0; j < pv; j++) {
+	for (j = 0; j <= pv; j++) {
 		glBegin(GL_LINE_STRIP);
-			for (i = 0; i < pu; i++)
+			for (i = 0; i <= pu; i++)
 			{
 				x = xSuperQuadric(u, v, R, s1, s2);
 				y = ySuperQuadric(u, v, R, s1, s2);
@@ -132,7 +132,7 @@ void igCreateQuadricObject(int pu, int pv, float uMax, float vMax, float R, floa
 	v = 0.0;
 	u = 0.0;
 
-	for (i = 0; i < pu; i++) {
+	for (i = 0; i <= pu; i++) {
 		v = 0;
 		glBegin(GL_LINE_STRIP);
 			for (j = 0; j <= pv; j++)
@@ -146,4 +146,46 @@ void igCreateQuadricObject(int pu, int pv, float uMax, float vMax, float R, floa
 		glEnd();
 		u = u + inc_u;
 	}
+}
+
+void igWireCubo() 
+{
+	float p0[3] = { -0.5f, -0.5f, 0.5f };
+	float p1[3] = { -0.5f, 0.5f, 0.5f };
+	float p2[3] = { 0.5f, 0.5f, 0.5f };
+	float p3[3] = { 0.5f, -0.5f, 0.5f };
+	float p4[3] = { -0.5f, -0.5f, -0.5f };
+	float p5[3] = { -0.5f, 0.5f, -0.5f };
+	float p6[3] = { 0.5f, 0.5f, -0.5f };
+	float p7[3] = { 0.5f, -0.5f, -0.5f };
+
+
+	glBegin(GL_LINE_STRIP);
+		glVertex3fv(p0);
+		glVertex3fv(p1);
+		glVertex3fv(p2);
+		glVertex3fv(p3);
+		glVertex3fv(p0);
+		glVertex3fv(p4);
+		glVertex3fv(p5);
+		glVertex3fv(p6);
+		glVertex3fv(p7);
+		glVertex3fv(p4);
+	glEnd();
+
+	glBegin(GL_LINE_STRIP);
+		glVertex3fv(p1);
+		glVertex3fv(p5);
+	glEnd();
+
+	glBegin(GL_LINE_STRIP);
+		glVertex3fv(p2);
+		glVertex3fv(p6);
+	glEnd();
+
+	glBegin(GL_LINE_STRIP);
+		glVertex3fv(p3);
+		glVertex3fv(p7);
+	glEnd();
+
 }
