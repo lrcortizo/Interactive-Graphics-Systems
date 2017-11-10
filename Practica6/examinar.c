@@ -132,8 +132,9 @@ void Dibuja (void)
 	glRotated (beta, 1.0,0.0,0.0);
     glRotated (-alfa, 0.0,1.0,0.0);
 	/* Llamadas a las display lists */
-	glCallList (abeto);
-
+	//glCallList(abetoPush);
+	//glCallList (abeto);
+	glCallList(escalera);
 	glFlush();
 }
 

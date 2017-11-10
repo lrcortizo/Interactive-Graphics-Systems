@@ -194,3 +194,8 @@ void igWireCone(int pu, int pv)
 {
 	igCreateQuadricObject(pu, pv, 1.0, 0.5, 1.0, 2.0, 1.0);
 }
+
+void igWireRulo(int pu, int pv)
+{
+	igCreateQuadricObject(pu, pv, 1.0, 1.0, 1.0, 0.5, 1.0);
+}

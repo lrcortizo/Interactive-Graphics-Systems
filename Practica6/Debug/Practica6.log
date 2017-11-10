@@ -1,3 +1,5 @@
-﻿  examinar.c
+﻿  modelado.c
+d:\ingeniería informática\master curso 1º\cuatrimestre 1\sgi\sgi\practica6\modelado.c(39): warning C4087: 'igWireCubo': se ha declarado con la lista de parámetros 'void'
+d:\ingeniería informática\master curso 1º\cuatrimestre 1\sgi\sgi\practica6\modelado.c(45): warning C4087: 'igWireCubo': se ha declarado con la lista de parámetros 'void'
   Practica6.vcxproj -> D:\INGENIERÍA INFORMÁTICA\MASTER CURSO 1º\CUATRIMESTRE 1\SGI\SGI\Practica6\Debug\Practica6.exe
   Practica6.vcxproj -> D:\INGENIERÍA INFORMÁTICA\MASTER CURSO 1º\CUATRIMESTRE 1\SGI\SGI\Practica6\Debug\Practica6.pdb (Partial PDB)

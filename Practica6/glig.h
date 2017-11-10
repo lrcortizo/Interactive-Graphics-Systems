@@ -23,5 +23,6 @@ float zSuperQuadric(float u, float v, float R, float s1, float s2);
 void igCreateQuadricObject(int pu, int pv, float uMax, float vMax, float R, float s1, float s2);
 void igWireCubo(void);
 void igWireCone(int pu, int pv);
+void igWireRulo(int pu, int pv);
 #endif
 
