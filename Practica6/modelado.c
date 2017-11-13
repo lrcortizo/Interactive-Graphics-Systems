@@ -31,6 +31,8 @@ void IniciaDisplayLists (void)
 
 void CreaEscalera() {
 	escalera=glGenLists(1);  
+	float angulo = 0.0;
+	float pos = -1.0;
 	if (escalera !=0) /* Cero no es un identificador valido para una display list */
 		{  
 	  			glNewList(escalera, GL_COMPILE); 
@@ -40,10 +42,13 @@ void CreaEscalera() {
 					glPopMatrix();
 					for (int i = 0; i <= 10; i++) {
 						glPushMatrix();
-							glTranslatef(0.35, -0.975, 0.0);
+							glRotatef(angulo, 0.0, 1.0, 0.0);
+							glTranslatef(0.35, pos, 0.0);
 							glScalef(0.5, 0.05, 0.1);
 							igWireCubo(1,1);
 						glPopMatrix();
+						angulo += 36.0;
+						pos += 0.2;
 					}
 	   			glEndList ();  
  			}  
