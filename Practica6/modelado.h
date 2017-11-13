@@ -12,12 +12,12 @@
 
 
 /* Identificadores de las display list */
-GLuint abeto,escalera,abetoPush;
+GLuint abeto,escalera,abetoPush,arco;
 
 /* Definición Funciones de modelado */
 void IniciaDisplayLists (void);
 void CreaAbeto(void);
 void CreaAbetoPush(void);
 void CreaEscalera(void);
-
+void CreaArco(void);
 #endif

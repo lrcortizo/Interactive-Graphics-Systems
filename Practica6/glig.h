@@ -24,5 +24,6 @@ void igCreateQuadricObject(int pu, int pv, float uMax, float vMax, float R, floa
 void igWireCubo(void);
 void igWireCone(int pu, int pv);
 void igWireRulo(int pu, int pv);
+void Arco(void);
 #endif
 

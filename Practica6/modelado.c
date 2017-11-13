@@ -18,14 +18,15 @@
 /******************************************************************************************/
 void IniciaDisplayLists (void)
 {
-    CreaAbeto ();
+    CreaAbeto();
 	CreaAbetoPush();
 	CreaEscalera();
+	CreaArco();
 }
 
 /******************************************************************************************/
-/* Crea una display list para dibujar un abeto                                            */
-/* Parametros: ninguno */
+/* Crea una display list para dibujar una escalera                                        */
+/* Parametros: ninguno                                                                    */
 /* Salida: Ninguna                                                                        */
 /******************************************************************************************/
 
@@ -36,10 +37,12 @@ void CreaEscalera() {
 	if (escalera !=0) /* Cero no es un identificador valido para una display list */
 		{  
 	  			glNewList(escalera, GL_COMPILE); 
+					//Crear pilar
 					glPushMatrix();
 						glScalef(0.2, 2.0, 0.2);
 						igWireCubo(1, 1);
 					glPopMatrix();
+					//Escalones
 					for (int i = 0; i <= 10; i++) {
 						glPushMatrix();
 							glRotatef(angulo, 0.0, 1.0, 0.0);
@@ -52,10 +55,14 @@ void CreaEscalera() {
 					}
 	   			glEndList ();  
  			}  
-
-
 }
 
+
+/******************************************************************************************/
+/* Crea una display list para dibujar un abeto                                            */
+/* Parametros: ninguno                                                                    */
+/* Salida: Ninguna                                                                        */
+/******************************************************************************************/
 void CreaAbeto(void)
 {
 	abeto = glGenLists(1);
@@ -78,13 +85,18 @@ void CreaAbeto(void)
 	}
 }
 
+/******************************************************************************************/
+/* Crea una display list para dibujar un abeto usando glPushMatrix y glPopMatrix          */
+/* Parametros: ninguno                                                                    */
+/* Salida: Ninguna                                                                        */
+/******************************************************************************************/
 void CreaAbetoPush (void)
 {
 	abetoPush = glGenLists(1);
 	if (abetoPush != 0) /* Cero no es un identificador valido para una display list */
 	{
 		glNewList(abetoPush, GL_COMPILE);
-		glColor3f(1, 0, 0);
+			glColor3f(1, 0, 0);
 			glPushMatrix();
 				glTranslatef(0.0, 0.5, 0.0);
 				glScalef(0.42, 1.0, 0.42);
@@ -109,3 +121,30 @@ void CreaAbetoPush (void)
 }
 
 
+/******************************************************************************************/
+/* Crea una display list para dibujar un arco                                             */
+/* Parametros: ninguno                                                                    */
+/* Salida: Ninguna                                                                        */
+/******************************************************************************************/
+void CreaArco(void)
+{
+	arco = glGenLists(1);
+	float angulo = 0;
+	float posX = 0;
+	float posZ = 0;
+	if (arco != 0) /* Cero no es un identificador valido para una display list */
+	{
+		glNewList(arco, GL_COMPILE);
+			for (int i = 0; i <= 1; i++) {
+				glPushMatrix();
+					glRotatef(angulo,0.0,1.0,0.0);
+					glTranslatef(posX, 0.0, posZ);
+					Arco();
+				glPopMatrix();
+				angulo += 32.73;
+				posX += 0.5;
+				posZ += 0.15;
+			}
+		glEndList();
+	}
+}

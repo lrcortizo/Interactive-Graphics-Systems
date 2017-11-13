@@ -131,10 +131,13 @@ void Dibuja (void)
 	glLoadIdentity();
 	glRotated (beta, 1.0,0.0,0.0);
     glRotated (-alfa, 0.0,1.0,0.0);
-	/* Llamadas a las display lists */
+
+	/* Llamadas a las display listss */
 	//glCallList(abetoPush);
 	//glCallList (abeto);
-	glCallList(escalera);
+	//glCallList(escalera);
+	glCallList(arco);
+
 	glFlush();
 }
 

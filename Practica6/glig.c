@@ -199,3 +199,22 @@ void igWireRulo(int pu, int pv)
 {
 	igCreateQuadricObject(pu, pv, 1.0, 1.0, 1.0, 0.5, 1.0);
 }
+
+void Arco() 
+{
+	glPushMatrix();
+		glTranslatef(-0.2, 0.0, 0.0);
+		glScalef(0.1, 0.5, 0.1);
+		igWireCubo(1, 1);
+	glPopMatrix();
+	glPushMatrix();
+		glTranslatef(0.2, 0.0, 0.0);
+		glScalef(0.1, 0.5, 0.1);
+		igWireCubo(1, 1);
+	glPopMatrix();
+	glPushMatrix();
+		glTranslatef(0.0, 0.2, 0.0);
+		glScalef(0.5, 0.1, 0.1);
+		igWireCubo(1, 1);
+	glPopMatrix();
+}
