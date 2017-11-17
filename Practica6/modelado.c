@@ -129,21 +129,18 @@ void CreaAbetoPush (void)
 void CreaArco(void)
 {
 	arco = glGenLists(1);
-	float angulo = 0;
-	float posX = 0;
-	float posZ = 0;
+	float angulo = 0.0;
+	float posZ = 0.0;
 	if (arco != 0) /* Cero no es un identificador valido para una display list */
 	{
 		glNewList(arco, GL_COMPILE);
-			for (int i = 0; i <= 1; i++) {
-				glPushMatrix();
-					glRotatef(angulo,0.0,1.0,0.0);
-					glTranslatef(posX, 0.0, posZ);
+			for (int i = 0; i <= 11; i++) {
+				glPushMatrix();	
+					glRotatef(angulo, 0.0, 1.0, 0.0);
+					glTranslatef(0.0, 0.0, -1.0);
 					Arco();
 				glPopMatrix();
-				angulo += 32.73;
-				posX += 0.5;
-				posZ += 0.15;
+				angulo += 30;
 			}
 		glEndList();
 	}
