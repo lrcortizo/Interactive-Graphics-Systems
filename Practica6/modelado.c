@@ -130,7 +130,6 @@ void CreaArco(void)
 {
 	arco = glGenLists(1);
 	float angulo = 0.0;
-	float posZ = 0.0;
 	if (arco != 0) /* Cero no es un identificador valido para una display list */
 	{
 		glNewList(arco, GL_COMPILE);
@@ -140,7 +139,7 @@ void CreaArco(void)
 					glTranslatef(0.0, 0.0, -1.0);
 					Arco();
 				glPopMatrix();
-				angulo += 30;
+				angulo += 30.0;
 			}
 		glEndList();
 	}
