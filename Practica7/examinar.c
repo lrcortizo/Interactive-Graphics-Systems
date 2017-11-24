@@ -98,36 +98,84 @@ void TecladoAmpliado (int tecla, int x, int y)
 	switch (tecla)
 	{
 		case GLUT_KEY_UP : // Pulsacion cursor arriba del teclado ampliado
-			beta = beta + 1.50;
-			if (beta > 360.0) beta = beta - 360.0;
-			ox = ix;
-			oz = iz;
-			ix = ox + PASO*sin(grad2rad(alfa));
-			iz = oz - PASO*cos(grad2rad(alfa));
+			switch (modo) {
+				case WALK:
+					ox = ix;
+					oz = iz;
+					ix = ox + PASO*sin(grad2rad(alfa));
+					iz = oz - PASO*cos(grad2rad(alfa));
+					break;
+				case EXAMINAR:
+					beta = beta + 1.50;
+					if (beta > 90.0) beta = 90;
+					iy = oy + PASO*sin(grad2rad(beta));
+					break;
+				case FLY:
+					ox = ix;
+					oz = iz;
+					oy = iy;
+					ix = ox + PASO*sin(grad2rad(alfa));
+					iz = oz - PASO*cos(grad2rad(alfa));
+					iy = oy + PASO*sin(grad2rad(beta));
+			}
 			break;
 
-
 		case GLUT_KEY_DOWN : // Pulsacion cursor abajo del teclado ampliado
-			beta = beta - 1.50;
-			if (beta < 0.0) beta = beta + 360.0;
-			ox = ox - (ix - ox);
-			oz = oz - (iz - oz);
-			ix = ox + PASO*sin(grad2rad(alfa));
-			iz = oz - PASO*cos(grad2rad(alfa));
+			switch (modo) {
+				case WALK:
+					ox = ox - (ix - ox);
+					oz = oz - (iz - oz);
+					ix = ox + PASO*sin(grad2rad(alfa));
+					iz = oz - PASO*cos(grad2rad(alfa));
+					break;
+				case EXAMINAR:
+					beta = beta - 1.50;
+					if (beta < -90.0) beta = -90;
+					iy = oy + PASO*sin(grad2rad(beta));
+					break;
+				case FLY:
+					ox = ox - (ix - ox);
+					oz = oz - (iz - oz);
+					oy = oy - (iy - oy);
+					ix = ox + PASO*sin(grad2rad(alfa));
+					iz = oz - PASO*cos(grad2rad(alfa));
+					iy = oy + PASO*sin(grad2rad(beta));
+			}
 			break;
 
 		case GLUT_KEY_RIGHT : // Pulsacion cursor derecha del teclado ampliado
-			alfa = alfa + 15.0;
-			if (alfa > 360.0) alfa = alfa - 360.0;
-			ix = ox + PASO*sin(grad2rad(alfa));
-			iz = oz - PASO*cos(grad2rad(alfa));
+			switch (modo) {
+				case WALK:
+					alfa = alfa + 15.0;
+					if (alfa > 360.0) alfa = alfa - 360.0;
+					ix = ox + PASO*sin(grad2rad(alfa));
+					iz = oz - PASO*cos(grad2rad(alfa));
+					break;
+				case EXAMINAR:
+					alfa = alfa + 15.0;
+					if (beta > 90.0) beta = 90;
+					ix = ox + sin(grad2rad(alfa));
+					iz = oz - cos(grad2rad(alfa));
+					break;
+
+			}
 			break;
 
 		case GLUT_KEY_LEFT : // Pulsacion cursor izquierda del teclado ampliado
-			alfa = alfa - 15.0;
-			if (alfa < 0.0) alfa = alfa + 360.0;
-			ix = ox + PASO*sin(grad2rad(alfa));
-			iz = oz - PASO*cos(grad2rad(alfa));
+			switch (modo) {
+				case WALK:
+					alfa = alfa - 15.0;
+					if (alfa < 0.0) alfa = alfa + 360.0;
+					ix = ox + PASO*sin(grad2rad(alfa));
+					iz = oz - PASO*cos(grad2rad(alfa));
+					break;
+				case EXAMINAR:
+					alfa = alfa - 15.0;
+					if (alfa < -90.0) alfa = -90;
+					ix = ox + sin(grad2rad(alfa));
+					iz = oz - cos(grad2rad(alfa));
+					break;
+			}
 			break;
 	}
 	glutPostRedisplay ();
