@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{703b5dbe-8fd9-44a5-a194-94c2a718e156}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{bb292acd-1279-4809-a5b3-bba0feef679e}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{fc5ba7df-5d28-456a-adbc-d61c70bd4c2a}</UniqueIdentifier>
+      <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="examinar.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="glig.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="modelado.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="examinar.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="modelado.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="glig.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

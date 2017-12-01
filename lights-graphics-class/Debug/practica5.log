@@ -1,0 +1,6 @@
+﻿  modelado.c
+  glig.c
+  examinar.c
+\\mac\descargas\practicasresueltascelso\practica5\examinar.c(68): warning C4013: 'exit' sin definir; se supone que extern devuelve como resultado int
+  Generando código...
+  practica5.vcxproj -> \\Mac\Descargas\PracticasResueltasCelso\practica5\.\Debug\practica5.exe

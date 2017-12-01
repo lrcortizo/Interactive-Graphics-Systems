@@ -1,0 +1,9 @@
+﻿  examinar.c
+examinar.c(74): warning C4013: 'exit' sin definir; se supone que extern devuelve como resultado int
+  glig.c
+glig.c(367): warning C4101: 'color_x': variable local sin referencia
+glig.c(367): warning C4101: 'color_y': variable local sin referencia
+glig.c(367): warning C4101: 'color_z': variable local sin referencia
+  modelado.c
+  Generando código...
+  practica5.vcxproj -> C:\Users\ivanr\Desktop\clase_visibilidad\.\Release\practica5.exe
