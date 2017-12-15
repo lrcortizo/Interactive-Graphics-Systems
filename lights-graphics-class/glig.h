@@ -15,6 +15,6 @@
 void igSolidCubo(void); //NORMALS PER VERTEX
 
 // TODO 08: COMPLETE A NEW FUNCTION CALLED "igSolidCubo_2" THAT CREATES A SOLID CUBE WITH NORMALS PER FACE
-
+void igSolidCubo_2(void);
 
 #endif

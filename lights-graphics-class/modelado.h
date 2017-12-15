@@ -8,7 +8,7 @@
 #ifndef MODELADO_H
 #define MODELADO_H
 
-#include <gl/glut.h>
+#include "glut.h"
 
 /* Identificadores de las display lists */
 GLuint escena;

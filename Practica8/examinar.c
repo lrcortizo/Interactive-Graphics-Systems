@@ -198,10 +198,10 @@ void Dibuja (void)
 
 	/* Llamadas a las display lists */
 	//DibujaEscena ();
-	//igSolidSphere (10, 10);
+	igSolidSphere (100, 100);
 	//igSolidRulo (10, 10);
 	//igSolidCubo();
-	igSolidSemiSphere(10,10);
+	//igSolidSemiSphere(10,10);
 	//igSolidDado(10, 10);
 	//igSolidCone(10,10);
 

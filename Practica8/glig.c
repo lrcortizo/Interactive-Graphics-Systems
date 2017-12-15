@@ -165,11 +165,13 @@ void igCreateSolidQuadricObject(int pu, int pv, float uMax, float vMax, float R,
 				x = xSuperQuadric(u, v, R, s1, s2);
 				y = ySuperQuadric(u, v, R, s1, s2);
 				z = zSuperQuadric(u, v, R, s1, s2);
+				glColor3f(u, v, 0.0f);
 				glVertex3f(x, y, z);
 
 				x = xSuperQuadric(u, v + inc_v, R, s1, s2);
 				y = ySuperQuadric(u, v + inc_v, R, s1, s2);
 				z = zSuperQuadric(u, v + inc_v, R, s1, s2);
+				glColor3f(u, v+inc_v, 0.0f);
 				glVertex3f(x, y, z);
 
 				u = u + inc_u;

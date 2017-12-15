@@ -47,9 +47,11 @@ void CreaEscena(void)
 		glNewList (escena, GL_COMPILE);
 
 		// TODO 06:  COMMENT SPHERE DRAWING AND DRAW A CUBE USING "igSolidCubo" FROM glig
-
+		
 		// TODO 09: CALL THE FUNCTION THAT DRAWS THE NEW CUBE AND SCALE IT (5.f, 5.f, 5.f)
-
+		//glScalef(5.f, 5.f, 5.f);
+		//igSolidCubo();
+		//igSolidCubo_2();
 		// TODO 10: COMMENT THE CUBE AND UNCOMMENT THE SOLID SPHERE DRAWING
 
 		// TODO 14: DEFINE MATERIAL PROPERTIES FOR THE SOLID SPHERE

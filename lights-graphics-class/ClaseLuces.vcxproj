@@ -18,7 +18,7 @@
     <SccProjectName />
     <SccLocalPath />
     <ProjectGuid>{51A380C3-3494-4E82-97DE-DFE518515A89}</ProjectGuid>
-    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.15063.0</WindowsTargetPlatformVersion>
     <ProjectName>ClaseLuces</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />

@@ -22,6 +22,6 @@ void IniciaFuncionesCallback (void);
 void IniciaOpenGL(void);
 
 // TODO 01: DEFINE HEADER OF A FUNCTION CALLED "IniciaLuces" WHERE WE ARE GOING TO INITIALIZE OPENGL LIGHTNING
-
+void IniciaLuces(void);
 
 #endif
