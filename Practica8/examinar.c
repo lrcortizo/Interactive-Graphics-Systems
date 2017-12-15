@@ -198,9 +198,14 @@ void Dibuja (void)
 
 	/* Llamadas a las display lists */
 	//DibujaEscena ();
-	igSolidSphere (10, 10);
+	//igSolidSphere (10, 10);
 	//igSolidRulo (10, 10);
 	//igSolidCubo();
+	igSolidSemiSphere(10,10);
+	//igSolidDado(10, 10);
+	//igSolidCone(10,10);
+
+
 	/* Utiliza la funcion de la glut que intercambia los buffers */
 	glutSwapBuffers ();
 }

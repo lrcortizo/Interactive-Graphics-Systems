@@ -167,6 +167,10 @@ void igCreateSolidQuadricObject(int pu, int pv, float uMax, float vMax, float R,
 				z = zSuperQuadric(u, v, R, s1, s2);
 				glVertex3f(x, y, z);
 
+				x = xSuperQuadric(u, v + inc_v, R, s1, s2);
+				y = ySuperQuadric(u, v + inc_v, R, s1, s2);
+				z = zSuperQuadric(u, v + inc_v, R, s1, s2);
+				glVertex3f(x, y, z);
 
 				u = u + inc_u;
 			}
