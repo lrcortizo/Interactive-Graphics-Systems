@@ -7,7 +7,7 @@
 
 /***************** INCLUDES DE LAS LIBRERIAS NECESARIAS ******************/
 
-#include <gl\glut.h>
+#include "glut.h"
 #include "glig.h"
 #include "material.h"
 #include "modelado.h"

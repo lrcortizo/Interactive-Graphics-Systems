@@ -16,6 +16,7 @@
 #define ALFA (0.5-v)*PI
 #define BETA 2*PI*u
 
+
 /************************* FUNCIONES BASICAS **********************************************/
 /******************************************************************************************/
 /* Devuelve la coordenada x de un punto en R3 a partir de un punto (u,v)                  */
@@ -222,7 +223,7 @@ void igWireCube()
 
 }
 
-void igSolidCubo(void)
+void igSolidCube(void)
 {
 	float p0[3] = { -0.5f, -0.5f, 0.5f };
 	float p1[3] = { -0.5f, 0.5f, 0.5f };
@@ -312,6 +313,8 @@ void igSolidSemiSphere(int pu, int pv)
 
 }
 
+
+
 void Arco() 
 {
 	glPushMatrix();
@@ -329,4 +332,143 @@ void Arco()
 		glScalef(0.5, 0.1, 0.1);
 		igWireCube(1, 1);
 	glPopMatrix();
+}
+
+/******************************************************************************************/
+/* Calcula la variacion en x para un incremento de u, derivada de x con respecto de u     */
+/* Parametros: float u --> Primera coordenada de un punto en R2                           */
+/*             float v --> Segunda coordenada de un punto en R2                           */
+/*             float R --> Radio de la esfera envolvente                                  */
+/*             float s1 --> Numero de divisiones en u                                     */
+/*             float s2 --> Numero de divisiones en v                                     */
+/* Salida: La variacion de x con u                                                        */
+/******************************************************************************************/
+float dxuSuperQuadric(float u, float v, float R, float s1, float s2)
+{
+	return((xSuperQuadric(u + E, v, R, s1, s2) - xSuperQuadric(u - E, v, R, s1, s2)) / (2 * E));
+}
+
+
+/******************************************************************************************/
+/* Calcula la variacion en y para un incremento de u, derivada de y con respecto de u     */
+/* Parametros: float u --> Primera coordenada de un punto en R2                           */
+/*             float v --> Segunda coordenada de un punto en R2                           */
+/*             float R --> Radio de la esfera envolvente                                  */
+/*             float s1 --> Numero de divisiones en u                                     */
+/*             float s2 --> Numero de divisiones en v                                     */
+/* Salida: La variacion de y con u                                                        */
+/******************************************************************************************/
+float dyuSuperQuadric(float u, float v, float R, float s1, float s2)
+{
+	return((ySuperQuadric(u + E, v, R, s1, s2) - ySuperQuadric(u - E, v, R, s1, s2)) / (2 * E));
+}
+
+
+/******************************************************************************************/
+/* Calcula la variacion en z para un incremento de u, derivada de z con respecto de u     */
+/* Parametros: float u --> Primera coordenada de un punto en R2                           */
+/*             float v --> Segunda coordenada de un punto en R2                           */
+/*             float R --> Radio de la esfera envolvente                                  */
+/*             float s1 --> Numero de divisiones en u                                     */
+/*             float s2 --> Numero de divisiones en v                                     */
+/* Salida: La variacion de z con u                                                        */
+/******************************************************************************************/
+float dzuSuperQuadric(float u, float v, float R, float s1, float s2)
+{
+	return((zSuperQuadric(u + E, v, R, s1, s2) - zSuperQuadric(u - E, v, R, s1, s2)) / (2 * E));
+}
+
+
+/******************************************************************************************/
+/* Calcula la variacion en x para un incremento de v, derivada de x con respecto de v     */
+/* Parametros: float u --> Primera coordenada de un punto en R2                           */
+/*             float v --> Segunda coordenada de un punto en R2                           */
+/*             float R --> Radio de la esfera envolvente                                  */
+/*             float s1 --> Numero de divisiones en u                                     */
+/*             float s2 --> Numero de divisiones en v                                     */
+/* Salida: La variacion de x con v                                                        */
+/******************************************************************************************/
+float dxvSuperQuadric(float u, float v, float R, float s1, float s2)
+{
+	return((xSuperQuadric(u, v + E, R, s1, s2) - xSuperQuadric(u, v - E, R, s1, s2)) / (2 * E));
+}
+
+
+/******************************************************************************************/
+/* Calcula la variacion en y para un incremento de u, derivada de y con respecto de v     */
+/* Parametros: float u --> Primera coordenada de un punto en R2                           */
+/*             float v --> Segunda coordenada de un punto en R2                           */
+/*             float R --> Radio de la esfera envolvente                                  */
+/*             float s1 --> Numero de divisiones en u                                     */
+/*             float s2 --> Numero de divisiones en v                                     */
+/* Salida: La variacion de y con u                                                        */
+/******************************************************************************************/
+float dyvSuperQuadric(float u, float v, float R, float s1, float s2)
+{
+	return((ySuperQuadric(u, v + E, R, s1, s2) - ySuperQuadric(u, v - E, R, s1, s2)) / (2 * E));
+}
+
+/******************************************************************************************/
+/* Calcula la variacion en z para un incremento de u, derivada de z con respecto de v     */
+/* Parametros: float u --> Primera coordenada de un punto en R2                           */
+/*             float v --> Segunda coordenada de un punto en R2                           */
+/*             float R --> Radio de la esfera envolvente                                  */
+/*             float s1 --> Numero de divisiones en u                                     */
+/*             float s2 --> Numero de divisiones en v                                     */
+/* Salida: La variacion de z con u                                                        */
+/******************************************************************************************/
+float dzvSuperQuadric(float u, float v, float R, float s1, float s2)
+{
+	return((zSuperQuadric(u, v + E, R, s1, s2) - zSuperQuadric(u, v - E, R, s1, s2)) / (2 * E));
+}
+
+/******************************************************************************************/
+/* Calcula la componente x del vector normal a la supercuadrica en (u,v)                  */
+/* Parametros: float u --> Primera coordenada de un punto en R2                           */
+/*             float v --> Segunda coordenada de un punto en R2                           */
+/*             float R --> Radio de la esfera envolvente                                  */
+/*             float s1 --> Numero de divisiones en u                                     */
+/*             float s2 --> Numero de divisiones en v                                     */
+/* Salida: Componente x del vector normal                                                 */
+/******************************************************************************************/
+float nxSuperQuadric(float u, float v, float R, float s1, float s2)
+{
+	if (v <= E) v = F;
+	if (v >= 1 - E) v = 1 - F;
+	return(dyuSuperQuadric(u, v, R, s1, s2)*dzvSuperQuadric(u, v, R, s1, s2) -
+		dyvSuperQuadric(u, v, R, s1, s2)*dzuSuperQuadric(u, v, R, s1, s2));
+}
+
+/******************************************************************************************/
+/* Calcula la componente y del vector normal a la supercuadrica en (u,v)                  */
+/* Parametros: float u --> Primera coordenada de un punto en R2                           */
+/*             float v --> Segunda coordenada de un punto en R2                           */
+/*             float R --> Radio de la esfera envolvente                                  */
+/*             float s1 --> Numero de divisiones en u                                     */
+/*             float s2 --> Numero de divisiones en v                                     */
+/* Salida: Componente y del vector normal                                                 */
+/******************************************************************************************/
+float nySuperQuadric(float u, float v, float R, float s1, float s2)
+{
+	if (v <= E) v = F;
+	if (v >= 1 - E) v = 1 - F;
+	return(dxvSuperQuadric(u, v, R, s1, s2)*dzuSuperQuadric(u, v, R, s1, s2) -
+		dxuSuperQuadric(u, v, R, s1, s2)*dzvSuperQuadric(u, v, R, s1, s2));
+}
+
+/******************************************************************************************/
+/* Calcula la componente z del vector normal a la supercuadrica en (u,v)                  */
+/* Parametros: float u --> Primera coordenada de un punto en R2                           */
+/*             float v --> Segunda coordenada de un punto en R2                           */
+/*             float R --> Radio de la esfera envolvente                                  */
+/*             float s1 --> Numero de divisiones en u                                     */
+/*             float s2 --> Numero de divisiones en v                                     */
+/* Salida: Componente z del vector normal                                                 */
+/******************************************************************************************/
+float nzSuperQuadric(float u, float v, float R, float s1, float s2)
+{
+	if (v <= E) v = F;
+	if (v >= 1 - E) v = 1 - F;
+	return(dxuSuperQuadric(u, v, R, s1, s2)*dyvSuperQuadric(u, v, R, s1, s2) -
+		dxvSuperQuadric(u, v, R, s1, s2)*dyuSuperQuadric(u, v, R, s1, s2));
 }

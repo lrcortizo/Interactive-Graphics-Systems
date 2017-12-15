@@ -111,12 +111,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="examinar.c" />
     <ClCompile Include="glig.c" />
     <ClCompile Include="luces.c" />
     <ClCompile Include="material.c" />
     <ClCompile Include="modelado.c" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="examinar.h" />
     <ClInclude Include="glig.h" />
     <ClInclude Include="luces.h" />
     <ClInclude Include="material.h" />

@@ -10,6 +10,8 @@
 
 #ifndef GLIG_H
 #define GLIG_H
+#define E 0.001
+#define F 0.002
 
 /* Devuelve la coordenada x de un punto en R3 a partir de un punto (u,v) */
 float xSuperQuadric(float u, float v, float R, float s1, float s2);
@@ -32,6 +34,6 @@ void igSolidRulo(int pu, int pv); /* s1= 0.5, s2= 1 */
 void igSolidDado(int pu, int pv); /* s1= 0.5, s2 =0.5 */
 void igSolidSemiSphere(int pu, int pv); /* s1 y s2 a 1, uMax= 1, vMax= 0.5 */
 void igSolidCone(int pu, int pv); /* s1= 2.0, s2= 1.0, uMax= 1.0, vMax= 0.5 */
-void igSolidCubo(void);
+void igSolidCube(void);
 #endif
 
