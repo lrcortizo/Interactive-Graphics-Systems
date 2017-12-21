@@ -68,15 +68,20 @@ void CreaEscena(void)
 		*/
 
 		// 14.1. RED AMBIENT COLOR
-
+		GLfloat red_ambient[] = { 1.f, 0.f, 0.f, 1.f };
+		glMaterialfv(GL_FRONT, GL_AMBIENT, red_ambient);
 		// 14.2. RED DIFFUSE COLOR
-
+		GLfloat red_diffuse[] = { 1.f, 0.5f, 0.5f, 1.f };
+		glMaterialfv(GL_FRONT, GL_DIFFUSE, red_diffuse);
 		// 14.3. WHITE SPECULAR COLOR
-		
+		GLfloat white_specular[] = { 1.f, 1.f, 1.f, 1.f };
+		glMaterialfv(GL_FRONT, GL_SPECULAR, white_specular);
 		// 14.4 SHININESS OF 20
-
+		GLfloat high_shininess = 20.f;
+		glMaterialf(GL_FRONT, GL_SHININESS, high_shininess);
 		// 14.5 LOW EMISSION 
-		
+		GLfloat mat_emission[] = { 0.1f, 0.1f, 0.1f, 1.f };
+		glMaterialfv(GL_FRONT, GL_EMISSION, mat_emission);
 
 		glutSolidSphere(5.f, 20, 16);
 

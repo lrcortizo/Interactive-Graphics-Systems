@@ -11,6 +11,7 @@
 #include <math.h>
 #include "examinar.h"
 #include "glig.h"
+#include "luces.h"
 
 /******************************************************************************************/
 /* Establece el area visible y el tipo de proyeccion                                      */
@@ -247,6 +248,8 @@ int main(int numArgumentos, char ** listaArgumentos)
 {	
 	/* Creación de la ventana de la aplicación */
 	AbreVentana (numArgumentos, listaArgumentos);
+
+	IniciaLuces();
 
 	/* Llamada a las funciones de inicializacion */
 	IniciaOpenGL ();

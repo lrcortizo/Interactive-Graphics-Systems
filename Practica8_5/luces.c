@@ -8,6 +8,7 @@
 /***************** INCLUDES DE LAS LIBRERIAS NECESARIAS ******************/
 
 #include "glut.h"
+#include "luces.h"
 
 
 /********************** RUTINA DE INICIO *************************/
@@ -17,7 +18,7 @@
 /* Salida: Ninguna                                                                        */
 /******************************************************************************************/
 void IniciaLuces(void)
-{	
+{
 	//GLfloat lmodel_ambient [] = {0.4f, 0.4f, 0.4f, 1.0f};
 
 	/* Par�metros del modelo de iluminaci�n */
@@ -26,10 +27,10 @@ void IniciaLuces(void)
 
 	/* Activa la iluminaci�n de la escena */
 
-	glEnable(GL_LIGHTING);	
+	glEnable(GL_LIGHTING);
 	glEnable(GL_NORMALIZE);
 	glEnable(GL_LIGHT0);
-
+	Luz0();
 }
 
 
@@ -42,6 +43,18 @@ void IniciaLuces(void)
 /******************************************************************************************/
 void Luz0 (void)
 {
+	GLfloat light_position[] = { 0.f, 1.f, 1.f, 1.f };
+	glLightfv(GL_LIGHT0, GL_POSITION, light_position);
+
+	GLfloat ambient_color[] = { 0.2f, 2.f, 2.f, 1.f };
+	glLightfv(GL_LIGHT0, GL_AMBIENT, ambient_color);
+
+	GLfloat diffuse_color[] = { 0.5f, 0.5f, 0.5f, 1.f };
+	glLightfv(GL_LIGHT0, GL_DIFFUSE, diffuse_color);
+
+	GLfloat specular_color[] = { 0.6f, 0.6f, 0.6f, 1.f };
+	glLightfv(GL_LIGHT0, GL_SPECULAR, diffuse_color);
+
 
 }
 

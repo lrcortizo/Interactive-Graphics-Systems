@@ -153,6 +153,7 @@ void igCreateSolidQuadricObject(int pu, int pv, float uMax, float vMax, float R,
 {
 	float u, v, inc_u, inc_v;
 	float x, y, z;
+	float xx, yy, zz;
 	int   i;
 	int j;  /* pu es el numero de divisiones en u */
 	v = 0.0;
@@ -163,14 +164,28 @@ void igCreateSolidQuadricObject(int pu, int pv, float uMax, float vMax, float R,
 		glBegin(GL_TRIANGLE_STRIP);
 			for (i = 0; i <= pu; i++)
 			{
+				//glTexCoord(u, v);
 				x = xSuperQuadric(u, v, R, s1, s2);
 				y = ySuperQuadric(u, v, R, s1, s2);
 				z = zSuperQuadric(u, v, R, s1, s2);
+
+				xx = nxSuperQuadric(u, v, R, s1, s2);
+				yy = nySuperQuadric(u, v, R, s1, s2);
+				zz = nzSuperQuadric(u, v, R, s1, s2);
+
+				glNormal3f(xx, yy, zz);
 				glVertex3f(x, y, z);
 
+				//glTexCoord(u, v+inc_v);
 				x = xSuperQuadric(u, v + inc_v, R, s1, s2);
 				y = ySuperQuadric(u, v + inc_v, R, s1, s2);
 				z = zSuperQuadric(u, v + inc_v, R, s1, s2);
+
+				xx = nxSuperQuadric(u, v, R, s1, s2);
+				yy = nySuperQuadric(u, v, R, s1, s2);
+				zz = nzSuperQuadric(u, v, R, s1, s2);
+
+				glNormal3f(xx, yy, zz);
 				glVertex3f(x, y, z);
 
 				u = u + inc_u;
@@ -236,27 +251,104 @@ void igSolidCube(void)
 
 
 	glBegin(GL_TRIANGLE_STRIP);
+		glNormal3fv(p2);
 		glVertex3fv(p2);
+		glNormal3fv(p3);
 		glVertex3fv(p3);
+		glNormal3fv(p1);
 		glVertex3fv(p1);
+		glNormal3fv(p0);
 		glVertex3fv(p0);
+		glNormal3fv(p5);
 		glVertex3fv(p5);
+		glNormal3fv(p4);
 		glVertex3fv(p4);
+		glNormal3fv(p6);
 		glVertex3fv(p6);
+		glNormal3fv(p7);
 		glVertex3fv(p7);
+		glNormal3fv(p2);
 		glVertex3fv(p2);
+		glNormal3fv(p3);
 		glVertex3fv(p3);
+		glNormal3fv(p0);
 		glVertex3fv(p0);
+		glNormal3fv(p7);
 		glVertex3fv(p7);
+		glNormal3fv(p4);
 		glVertex3fv(p4);
 	glEnd();
 
 	glBegin(GL_TRIANGLE_STRIP);
+		glNormal3fv(p1);
+		glVertex3fv(p1);
+		glNormal3fv(p5);
+		glVertex3fv(p5);
+		glNormal3fv(p2);
+		glVertex3fv(p2);
+		glNormal3fv(p6);
+		glVertex3fv(p6);
+	glEnd();
+}
+
+void igSolidCubo_2(void)  /* s1 y s2 a 1 */
+{
+
+	float p0[3] = { -0.5f, -0.5f, -0.5f };
+	float p1[3] = { -0.5f, 0.5f, -0.5f };
+	float p2[3] = { 0.5f, 0.5f, -0.5f };
+	float p3[3] = { 0.5f, -0.5f, -0.5f };
+	float p4[3] = { -0.5f, -0.5f, 0.5f };
+	float p5[3] = { -0.5f, 0.5f, 0.5f };
+	float p6[3] = { 0.5f, 0.5f, 0.5f };
+	float p7[3] = { 0.5f, -0.5f, 0.5f };
+
+	//TRASERA
+	glBegin(GL_QUADS);
+	glNormal3f(0, 0, -1);
+	glVertex3fv(p0);
 	glVertex3fv(p1);
-	glVertex3fv(p5);
+	glVertex3fv(p2);
+	glVertex3fv(p3);
+
+	//DERECHA
+	glNormal3f(1, 0, 0);
+	glVertex3fv(p3);
 	glVertex3fv(p2);
 	glVertex3fv(p6);
+	glVertex3fv(p7);
+
+	//IZQUIERDA
+	glNormal3f(-1, 0, 0);
+	glVertex3fv(p4);
+	glVertex3fv(p5);
+	glVertex3fv(p1);
+	glVertex3fv(p0);
+
+	//FRONTAL
+	glNormal3f(0, 0, 1);
+	glVertex3fv(p7);
+	glVertex3fv(p6);
+	glVertex3fv(p5);
+	glVertex3fv(p4);
+
+	//TOP
+	glNormal3f(0, 1, 0);
+	glVertex3fv(p1);
+	glVertex3fv(p5);
+	glVertex3fv(p6);
+	glVertex3fv(p2);
+
+	//BOTTOM
+	glNormal3f(0, -1, 0);
+	glVertex3fv(p3);
+	glVertex3fv(p7);
+	glVertex3fv(p4);
+	glVertex3fv(p0);
+
 	glEnd();
+
+
 }
 
 void igWireCone(int pu, int pv)
