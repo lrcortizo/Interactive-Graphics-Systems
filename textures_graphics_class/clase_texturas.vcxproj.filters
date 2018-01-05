@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{c555a933-69aa-4845-abe3-97bd34863ce0}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{c3b49dbb-ca28-469b-be92-473dee7e0503}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{2a15c4f2-87a5-4183-8531-f7fc4622e081}</UniqueIdentifier>
+      <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="examinar.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="glig.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="modelado.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="textura.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="examinar.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="glig.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="modelado.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="textura.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="glut.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

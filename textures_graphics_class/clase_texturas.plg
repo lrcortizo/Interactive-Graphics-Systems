@@ -1,0 +1,48 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: practica8 - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\sgmeire\CONFIG~1\Temp\RSPFF.tmp" with contents
+[
+/nologo /MLd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_CONSOLE" /D "_MBCS" /FR"Debug/" /Fp"Debug/practica8.pch" /YX /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"C:\Documents and Settings\sgmeire\Mis documentos\Trabajo\docencia\curso06-07\IG\PracticasResueltasCelso\Practica8\examinar.c"
+"C:\Documents and Settings\sgmeire\Mis documentos\Trabajo\docencia\curso06-07\IG\PracticasResueltasCelso\Practica8\glig.c"
+"C:\Documents and Settings\sgmeire\Mis documentos\Trabajo\docencia\curso06-07\IG\PracticasResueltasCelso\Practica8\luces.c"
+"C:\Documents and Settings\sgmeire\Mis documentos\Trabajo\docencia\curso06-07\IG\PracticasResueltasCelso\Practica8\material.c"
+"C:\Documents and Settings\sgmeire\Mis documentos\Trabajo\docencia\curso06-07\IG\PracticasResueltasCelso\Practica8\modelado.c"
+]
+Creating command line "cl.exe @C:\DOCUME~1\sgmeire\CONFIG~1\Temp\RSPFF.tmp" 
+<h3>Output Window</h3>
+Compiling...
+examinar.c
+glig.c
+luces.c
+material.c
+modelado.c
+Creating temporary file "C:\DOCUME~1\sgmeire\CONFIG~1\Temp\RSP100.tmp" with contents
+[
+kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib opengl32.lib glu32.lib glaux.lib /nologo /subsystem:console /incremental:yes /pdb:"Debug/practica8.pdb" /debug /machine:I386 /out:"Debug/practica8.exe" /pdbtype:sept 
+".\Debug\examinar.obj"
+".\Debug\glig.obj"
+".\Debug\luces.obj"
+".\Debug\material.obj"
+".\Debug\modelado.obj"
+]
+Creating command line "link.exe @C:\DOCUME~1\sgmeire\CONFIG~1\Temp\RSP100.tmp"
+<h3>Output Window</h3>
+Linking...
+Creating command line "bscmake.exe /nologo /o"Debug/practica8.bsc"  ".\Debug\examinar.sbr" ".\Debug\glig.sbr" ".\Debug\luces.sbr" ".\Debug\material.sbr" ".\Debug\modelado.sbr""
+Creating browse info file...
+<h3>Output Window</h3>
+
+
+
+<h3>Results</h3>
+practica8.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>
