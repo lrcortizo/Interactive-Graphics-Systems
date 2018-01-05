@@ -1,3 +1,9 @@
-﻿  luces.c
+﻿  modelado.c
+  material.c
+  luces.c
+  glig.c
+  examinar.c
+  Generando código...
+  LINK : no se encontró D:\INGENIERÍA INFORMÁTICA\MASTER CURSO 1º\CUATRIMESTRE 1\SGI\SGI\Practica8_5\Debug\Practica8_5.exe o no lo generó el último vínculo incremental; ejecutando vínculo completo
   Practica8_5.vcxproj -> D:\INGENIERÍA INFORMÁTICA\MASTER CURSO 1º\CUATRIMESTRE 1\SGI\SGI\Practica8_5\Debug\Practica8_5.exe
   Practica8_5.vcxproj -> D:\INGENIERÍA INFORMÁTICA\MASTER CURSO 1º\CUATRIMESTRE 1\SGI\SGI\Practica8_5\Debug\Practica8_5.pdb (Partial PDB)
