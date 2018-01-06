@@ -348,7 +348,6 @@ void igSolidCubo_2(void)  /* s1 y s2 a 1 */
 
 	glEnd();
 
-
 }
 
 void igWireCone(int pu, int pv)

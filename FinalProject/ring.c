@@ -5,8 +5,6 @@
 #include "glig.h"
 #include "ring.h"
 
-#define PI 3.1415926535897932
-
 void ringBase(void)
 {
 	glPushMatrix();
@@ -33,18 +31,19 @@ void ringPosts(void)
 	glPopMatrix();
 
 	glPushMatrix();
-		glTranslatef(1.70, 0.60, -1.70);
+		glTranslatef(-1.70, 0.60, -1.70);
 		glScalef(0.1, 0.7, 0.1);
 		glColor3f(1.0, 0.0, 0.0, 1.0);
 		igSolidCubo();
 	glPopMatrix();
 
 	glPushMatrix();
-		glTranslatef(-1.70, 0.60, -1.70);
+		glTranslatef(1.70, 0.60, -1.70);
 		glScalef(0.1, 0.7, 0.1);
 		glColor3f(1.0, 0.0, 0.0, 1.0);
 		igSolidCubo();
 	glPopMatrix();
+
 }
 
 void ringCornerPads(void)
@@ -52,7 +51,7 @@ void ringCornerPads(void)
 	glPushMatrix();
 		glTranslatef(1.5, 0.6875, 1.5);
 			glScalef(0.1, 0.525, 0.1);
-			glRotatef(-45.0, 0.0, 1.0, 0.0);
+			glRotatef(45.0, 0.0, 1.0, 0.0);
 			glColor3f(0.0, 1.0, 0.0, 1.0);
 		igSolidCubo();
 	glPopMatrix();
@@ -66,25 +65,80 @@ void ringCornerPads(void)
 	glPopMatrix();
 
 	glPushMatrix();
-		glTranslatef(1.5, 0.6875, -1.5);
+	glTranslatef(-1.5, 0.6875, -1.5);
 		glScalef(0.1, 0.525, 0.1);
-		glRotatef(-45.0, 0.0, 1.0, 0.0);
+		glRotatef(-135.0, 0.0, 1.0, 0.0);
 		glColor3f(0.0, 1.0, 0.0, 1.0);
 		igSolidCubo();
 	glPopMatrix();
 
 	glPushMatrix();
-		glTranslatef(-1.5, 0.6875, -1.5);
+		glTranslatef(1.5, 0.6875, -1.5);
 		glScalef(0.1, 0.525, 0.1);
-		glRotatef(-45.0, 0.0, 1.0, 0.0);
+		glRotatef(135.0, 0.0, 1.0, 0.0);
 		glColor3f(0.0, 1.0, 0.0, 1.0);
 		igSolidCubo();
 	glPopMatrix();
+
 }
 
 void ringTurnbuckles(void)
 {
-	
+	float y_pos = 0.435;
+
+	for (int i = 0; i < 4; i++)
+	{
+		glPushMatrix();
+			glTranslatef(1.5, y_pos, 1.5);
+			glRotatef(45.0, 0.0, 1.0, 0.0);
+			glColor3f(1.0f, 1.0f, 0.0f, 1.0f);
+			igSolidCilynder(0.01, 0.25);
+		glPopMatrix();
+
+		y_pos += 0.165;
+	}
+
+	y_pos = 0.435;
+
+	for (int i = 0; i < 4; i++)
+	{
+		glPushMatrix();
+			glTranslatef(-1.5, y_pos, 1.5);
+			glRotatef(-45.0, 0.0, 1.0, 0.0);
+			glColor3f(1.0, 1.0, 0.0, 1.0);
+			igSolidCilynder(0.01, 0.25);
+		glPopMatrix();
+
+		y_pos += 0.165;
+	}
+
+	y_pos = 0.435;
+
+	for (int i = 0; i < 4; i++)
+	{
+		glPushMatrix();
+			glTranslatef(-1.5, y_pos, -1.5);
+			glRotatef(-135.0, 0.0, 1.0, 0.0);
+			glColor3f(1.0, 1.0, 0.0, 1.0);
+			igSolidCilynder(0.01, 0.25);
+		glPopMatrix();
+
+		y_pos += 0.165;
+	}
+
+	y_pos = 0.435;
+
+	for (int i = 0; i < 4; i++)
+	{
+		glPushMatrix();
+			glTranslatef(1.5, y_pos, -1.5);
+			glRotatef(135.0, 0.0, 1.0, 0.0);
+			glColor3f(1.0, 1.0, 0.0, 1.0);
+			igSolidCilynder(0.01, 0.25);
+		glPopMatrix();
+
+		y_pos += 0.165;
+	}
 }
 
 void ringRopes(void)

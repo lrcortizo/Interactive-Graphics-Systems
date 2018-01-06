@@ -26,11 +26,11 @@ void IniciaLuces(void)
 	//glLightModelfv(GL_LIGHT_MODEL_AMBIENT, lmodel_ambient);
 
 	/* Activa la iluminaci�n de la escena */
-/*
-	glEnable(GL_LIGHTING);
-	glEnable(GL_NORMALIZE);
-	glEnable(GL_LIGHT0);
-	Luz0();*/
+
+	//glEnable(GL_LIGHTING);
+	//glEnable(GL_NORMALIZE);
+	//glEnable(GL_LIGHT0);
+	//Luz0();
 }
 
 
@@ -43,7 +43,7 @@ void IniciaLuces(void)
 /******************************************************************************************/
 void Luz0 (void)
 {
-	/*GLfloat light_position[] = { 0.f, 1.f, 1.f, 1.f };
+	GLfloat light_position[] = { 0.f, 1.f, 1.f, 1.f };
 	glLightfv(GL_LIGHT0, GL_POSITION, light_position);
 
 	GLfloat ambient_color[] = { 0.2f, 2.f, 2.f, 1.f };
@@ -53,7 +53,7 @@ void Luz0 (void)
 	glLightfv(GL_LIGHT0, GL_DIFFUSE, diffuse_color);
 
 	GLfloat specular_color[] = { 0.6f, 0.6f, 0.6f, 1.f };
-	glLightfv(GL_LIGHT0, GL_SPECULAR, diffuse_color);*/
+	glLightfv(GL_LIGHT0, GL_SPECULAR, diffuse_color);
 
 
 }

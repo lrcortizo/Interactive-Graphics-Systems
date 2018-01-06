@@ -13,6 +13,7 @@
 #include "glig.h"
 #include "luces.h"
 #include "ring.h"
+#include "stadium.h"
 
 /******************************************************************************************/
 /* Establece el area visible y el tipo de proyeccion                                      */
@@ -210,8 +211,10 @@ void Dibuja (void)
 	ringBase();
 	ringPosts();
 	ringCornerPads();
-	//ringTurnbuckles();
+	ringTurnbuckles();
 	ringRopes();
+	stadiumFloor();
+	placeGrandstands();
 
 	/* Utiliza la funcion de la glut que intercambia los buffers */
 	glutSwapBuffers ();
