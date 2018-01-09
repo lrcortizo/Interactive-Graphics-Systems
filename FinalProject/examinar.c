@@ -218,7 +218,7 @@ void Dibuja (void)
 	glCallList(ropes);
 	glCallList(pgrandstands);
 	glCallList(gseats);
-	glCallList(floor);
+	glCallList(sfloor);
 	glCallList(walls);
 
 	/* Utiliza la funcion de la glut que intercambia los buffers */
