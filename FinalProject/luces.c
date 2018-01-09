@@ -27,10 +27,10 @@ void IniciaLuces(void)
 
 	/* Activa la iluminaci�n de la escena */
 
-	//glEnable(GL_LIGHTING);
-	//glEnable(GL_NORMALIZE);
-	//glEnable(GL_LIGHT0);
-	//Luz0();
+	glEnable(GL_LIGHTING);
+	glEnable(GL_NORMALIZE);
+	glEnable(GL_LIGHT0);
+	Luz0();
 }
 
 

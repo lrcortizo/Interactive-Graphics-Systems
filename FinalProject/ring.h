@@ -1,7 +1,9 @@
+#ifndef RING_H
+#define RING_H
 
-#ifndef GLIG_H
-#define GLIG_H
+#include "glut.h"
 
+GLuint base, posts, corner_pads, turnbuckles, ropes;
 //Floor of ring
 void ringBase(void);
 void ringPosts(void);

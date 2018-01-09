@@ -11,6 +11,9 @@
 #include "glig.h"
 #include "material.h"
 #include "modelado.h"
+#include "stadium.h"
+#include "ring.h"
+#include "grandstand.h"
 
 /********************* ESCENA ILUMINACION ****************/
 
@@ -105,4 +108,17 @@ void CreaEscenaIluminacion(void)
 		glPopMatrix();
 		glEndList ();
 	}
+}
+
+void IniciaDisplayLists(void)
+{
+	ringBase();
+	ringPosts();
+	ringCornerPads();
+	ringTurnbuckles();
+	ringRopes();
+	placeGrandstands();
+	grandstandSeats();
+	stadiumFloor();
+	stadiumWalls();
 }

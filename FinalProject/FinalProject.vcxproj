@@ -117,6 +117,7 @@
     <ClCompile Include="material.c" />
     <ClCompile Include="modelado.c" />
     <ClCompile Include="ring.c" />
+    <ClCompile Include="grandstand.c" />
     <ClCompile Include="stadium.c" />
   </ItemGroup>
   <ItemGroup>
@@ -126,6 +127,7 @@
     <ClInclude Include="material.h" />
     <ClInclude Include="modelado.h" />
     <ClInclude Include="ring.h" />
+    <ClInclude Include="grandstand.h" />
     <ClInclude Include="stadium.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -23,5 +23,5 @@ void SueloSolid(void);
 /* Crea la display list para la escena */
 void CreaEscenaIluminacion (void);
 
-
+void IniciaDisplayLists(void);
 #endif

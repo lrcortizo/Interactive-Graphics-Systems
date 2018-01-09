@@ -19,10 +19,10 @@
 void IniciaMaterial(void)
 {
 	/* Se modificara las propiedades de color de material ambiente y difusa */
-	//glColorMaterial(GL_FRONT,GL_DIFFUSE); //Solo difuse con glColor
+	glColorMaterial(GL_FRONT,GL_DIFFUSE); //Solo difuse con glColor
 
 	/* Se permite el cambio de la propiedad de material con glColor */
-	//glEnable(GL_COLOR_MATERIAL);
+	glEnable(GL_COLOR_MATERIAL);
 }
 
 /*********************** DEFINICION DE MATERIALES *****************************************/

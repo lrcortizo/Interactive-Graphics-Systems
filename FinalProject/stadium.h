@@ -1,9 +1,9 @@
+#ifndef STADIUM_H
+#define STADIUM_H
 
+#include "glut.h"
 
-#ifndef GLIG_H
-#define GLIG_H
+GLuint sfloor, walls;
 void stadiumFloor(void);
-void grandstandStep(float p0[3], float p1[3], float p2[3], float p3[3], float p4[3], float p5[3], float p6[3], float p7[3]);
-void stadiumGrandstands(void);
-void placeGrandstands(void);
+void stadiumWalls(void);
 #endif

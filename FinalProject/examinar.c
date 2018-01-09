@@ -10,10 +10,13 @@
 #include <stdio.h>
 #include <math.h>
 #include "examinar.h"
+#include "modelado.h"
+#include "material.h"
 #include "glig.h"
 #include "luces.h"
 #include "ring.h"
 #include "stadium.h"
+#include "grandstand.h"
 
 /******************************************************************************************/
 /* Establece el area visible y el tipo de proyeccion                                      */
@@ -208,13 +211,15 @@ void Dibuja (void)
 	//igSolidDado(10, 10);
 	//igSolidCone(10,10);
 
-	ringBase();
-	ringPosts();
-	ringCornerPads();
-	ringTurnbuckles();
-	ringRopes();
-	stadiumFloor();
-	placeGrandstands();
+	glCallList(base);
+	glCallList(posts);
+	glCallList(corner_pads);
+	glCallList(turnbuckles);
+	glCallList(ropes);
+	glCallList(pgrandstands);
+	glCallList(gseats);
+	glCallList(floor);
+	glCallList(walls);
 
 	/* Utiliza la funcion de la glut que intercambia los buffers */
 	glutSwapBuffers ();
@@ -259,15 +264,24 @@ int main(int numArgumentos, char ** listaArgumentos)
 	AbreVentana (numArgumentos, listaArgumentos);
 
 	IniciaLuces();
-
+	IniciaMaterial();
 	/* Llamada a las funciones de inicializacion */
 	IniciaOpenGL ();
 
 	/* Rutinas para el control de eventos */
     IniciaFuncionesCallback ();
 
-	/* Creo la display list de la escena */
 
+	/* Creo la display list de la escena */
+	ringBase();
+	ringPosts();
+	ringCornerPads();
+	ringTurnbuckles();
+	ringRopes();
+	placeGrandstands();
+	grandstandSeats();
+	stadiumFloor();
+	stadiumWalls();
 	printf ("Modo = WALK\r");
 	
 	/* A la espera de eventos.... */

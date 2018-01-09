@@ -33,6 +33,9 @@
     <ClCompile Include="examinar.c">
       <Filter>Archivos de código fuente</Filter>
     </ClCompile>
+    <ClCompile Include="grandstand.c">
+      <Filter>Archivos de código fuente</Filter>
+    </ClCompile>
     <ClCompile Include="stadium.c">
       <Filter>Archivos de código fuente</Filter>
     </ClCompile>
@@ -54,6 +57,9 @@
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
     <ClInclude Include="examinar.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="grandstand.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
     <ClInclude Include="stadium.h">
