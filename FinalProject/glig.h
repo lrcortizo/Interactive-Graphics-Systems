@@ -46,6 +46,5 @@ void igSolidSemiSphere(int pu, int pv); /* s1 y s2 a 1, uMax= 1, vMax= 0.5 */
 void igSolidCone(int pu, int pv); /* s1= 2.0, s2= 1.0, uMax= 1.0, vMax= 0.5 */
 void igSolidCubo(void);
 void igSolidCilynder(GLfloat radius, GLfloat height);
-void igSolidCubo_2(void);
 #endif
 

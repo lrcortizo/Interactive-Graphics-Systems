@@ -211,11 +211,11 @@ void Dibuja (void)
 	//igSolidDado(10, 10);
 	//igSolidCone(10,10);
 
-	glCallList(base);
-	glCallList(posts);
-	glCallList(corner_pads);
-	glCallList(turnbuckles);
-	glCallList(ropes);
+	//glCallList(base);
+	//glCallList(posts);
+	//glCallList(corner_pads);
+	//glCallList(turnbuckles);
+	//glCallList(ropes);
 	glCallList(pgrandstands);
 	glCallList(gseats);
 	glCallList(sfloor);
@@ -264,7 +264,7 @@ int main(int numArgumentos, char ** listaArgumentos)
 	AbreVentana (numArgumentos, listaArgumentos);
 
 	IniciaLuces();
-	IniciaMaterial();
+
 	/* Llamada a las funciones de inicializacion */
 	IniciaOpenGL ();
 
@@ -273,15 +273,8 @@ int main(int numArgumentos, char ** listaArgumentos)
 
 
 	/* Creo la display list de la escena */
-	ringBase();
-	ringPosts();
-	ringCornerPads();
-	ringTurnbuckles();
-	ringRopes();
-	placeGrandstands();
-	grandstandSeats();
-	stadiumFloor();
-	stadiumWalls();
+	IniciaDisplayLists();
+
 	printf ("Modo = WALK\r");
 	
 	/* A la espera de eventos.... */

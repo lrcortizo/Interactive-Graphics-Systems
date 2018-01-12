@@ -1,8 +1,9 @@
-﻿  stadium.c
-d:\ingeniería informática\master curso 1º\cuatrimestre 1\sgi\sgi\finalproject\stadium.c(14): warning C4020: 'glColor3f': hay demasiados parámetros reales
-d:\ingeniería informática\master curso 1º\cuatrimestre 1\sgi\sgi\finalproject\stadium.c(36): warning C4020: 'glColor3f': hay demasiados parámetros reales
-d:\ingeniería informática\master curso 1º\cuatrimestre 1\sgi\sgi\finalproject\stadium.c(43): warning C4020: 'glColor3f': hay demasiados parámetros reales
-d:\ingeniería informática\master curso 1º\cuatrimestre 1\sgi\sgi\finalproject\stadium.c(50): warning C4020: 'glColor3f': hay demasiados parámetros reales
-d:\ingeniería informática\master curso 1º\cuatrimestre 1\sgi\sgi\finalproject\stadium.c(58): warning C4020: 'glColor3f': hay demasiados parámetros reales
+﻿  grandstand.c
+d:\ingeniería informática\master curso 1º\cuatrimestre 1\sgi\sgi\finalproject\grandstand.c(12): warning C4020: 'glColor3f': hay demasiados parámetros reales
+d:\ingeniería informática\master curso 1º\cuatrimestre 1\sgi\sgi\finalproject\grandstand.c(83): warning C4020: 'glColor3f': hay demasiados parámetros reales
+d:\ingeniería informática\master curso 1º\cuatrimestre 1\sgi\sgi\finalproject\grandstand.c(330): warning C4020: 'glColor3f': hay demasiados parámetros reales
+d:\ingeniería informática\master curso 1º\cuatrimestre 1\sgi\sgi\finalproject\grandstand.c(336): warning C4020: 'glColor3f': hay demasiados parámetros reales
+d:\ingeniería informática\master curso 1º\cuatrimestre 1\sgi\sgi\finalproject\grandstand.c(343): warning C4020: 'glColor3f': hay demasiados parámetros reales
+d:\ingeniería informática\master curso 1º\cuatrimestre 1\sgi\sgi\finalproject\grandstand.c(349): warning C4020: 'glColor3f': hay demasiados parámetros reales
   FinalProject.vcxproj -> D:\INGENIERÍA INFORMÁTICA\MASTER CURSO 1º\CUATRIMESTRE 1\SGI\SGI\FinalProject\Debug\FinalProject.exe
   FinalProject.vcxproj -> D:\INGENIERÍA INFORMÁTICA\MASTER CURSO 1º\CUATRIMESTRE 1\SGI\SGI\FinalProject\Debug\FinalProject.pdb (Partial PDB)

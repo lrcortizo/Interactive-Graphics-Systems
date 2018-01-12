@@ -1,19 +1,2 @@
-﻿  modelado.c
-  textura.c
-d:\ingeniería informática\master curso 1º\cuatrimestre 1\sgi\sgi\textures_graphics_class\textura.c(22): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\stdio.h(207): note: vea la declaración de 'fopen'
-d:\ingeniería informática\master curso 1º\cuatrimestre 1\sgi\sgi\textures_graphics_class\textura.c(28): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\stdio.h(1195): note: vea la declaración de 'fscanf'
-d:\ingeniería informática\master curso 1º\cuatrimestre 1\sgi\sgi\textures_graphics_class\textura.c(35): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\stdio.h(1195): note: vea la declaración de 'fscanf'
-d:\ingeniería informática\master curso 1º\cuatrimestre 1\sgi\sgi\textures_graphics_class\textura.c(86): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\stdio.h(207): note: vea la declaración de 'fopen'
-d:\ingeniería informática\master curso 1º\cuatrimestre 1\sgi\sgi\textures_graphics_class\textura.c(92): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\stdio.h(1195): note: vea la declaración de 'fscanf'
-d:\ingeniería informática\master curso 1º\cuatrimestre 1\sgi\sgi\textures_graphics_class\textura.c(99): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\stdio.h(1195): note: vea la declaración de 'fscanf'
-  glig.c
-  examinar.c
-  Generando código...
-  clase_texturas.vcxproj -> D:\INGENIERÍA INFORMÁTICA\MASTER CURSO 1º\CUATRIMESTRE 1\SGI\SGI\textures_graphics_class\.\Debug\clase_texturas.exe
+﻿  clase_texturas.vcxproj -> D:\INGENIERÍA INFORMÁTICA\MASTER CURSO 1º\CUATRIMESTRE 1\SGI\SGI\textures_graphics_class\.\Debug\clase_texturas.exe
   clase_texturas.vcxproj -> .\Debug\clase_texturas.pdb (Full PDB)

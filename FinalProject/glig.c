@@ -28,22 +28,22 @@
 /*             float s2 --> Numero de divisiones en v                                     */
 /* Salida: La coordenada x de un punto en R3                                              */
 /******************************************************************************************/
-float xSuperQuadric (float u, float v, float R, float s1, float s2)
+float xSuperQuadric(float u, float v, float R, float s1, float s2)
 {
 	float cosalfa, cosbeta, powcosalfa, powcosbeta;
 
 	cosalfa = (float)cos(ALFA);
 	cosbeta = (float)cos(BETA);
 
-	if(cosalfa > 0.0)
-		powcosalfa = (float)pow(cosalfa,s1);
+	if (cosalfa > 0.0)
+		powcosalfa = (float)pow(cosalfa, s1);
 	else
-		powcosalfa =(float) - pow(- cosalfa,s1);
+		powcosalfa = (float)-pow(-cosalfa, s1);
 
-	if(cosbeta > 0.0)
-		powcosbeta = (float)pow(cosbeta,s2);
+	if (cosbeta > 0.0)
+		powcosbeta = (float)pow(cosbeta, s2);
 	else
-		powcosbeta = (float) - pow(- cosbeta,s2);
+		powcosbeta = (float)-pow(-cosbeta, s2);
 
 	return (R*powcosalfa*powcosbeta);
 
@@ -60,16 +60,16 @@ float xSuperQuadric (float u, float v, float R, float s1, float s2)
 /*             float s2 --> Numero de divisiones en v                                     */
 /* Salida: La coordenada y de un punto en R3                                              */
 /******************************************************************************************/
-float ySuperQuadric (float u, float v, float R, float s1, float s2)
+float ySuperQuadric(float u, float v, float R, float s1, float s2)
 {
 	float sinalfa, powsinalfa;
 
 	sinalfa = (float)sin(ALFA);
 
-	if(sinalfa > 0.0)
-		powsinalfa = (float)pow(sinalfa,s1);
+	if (sinalfa > 0.0)
+		powsinalfa = (float)pow(sinalfa, s1);
 	else
-		powsinalfa = (float)- pow(- sinalfa,s1);
+		powsinalfa = (float)-pow(-sinalfa, s1);
 
 	return (R*powsinalfa);
 }
@@ -90,17 +90,17 @@ float zSuperQuadric(float u, float v, float R, float s1, float s2)
 	float cosalfa, sinbeta, powcosalfa, powsinbeta;
 
 	cosalfa = (float)cos(ALFA);
-	sinbeta=(float)sin(BETA);
+	sinbeta = (float)sin(BETA);
 
-	if(cosalfa > 0.0)
-		powcosalfa = (float)pow(cosalfa,s1);
+	if (cosalfa > 0.0)
+		powcosalfa = (float)pow(cosalfa, s1);
 	else
-		powcosalfa=(float) - pow(- cosalfa,s1);
+		powcosalfa = (float)-pow(-cosalfa, s1);
 
-	if(sinbeta > 0.0)
-		powsinbeta = (float)pow(sinbeta,s2);
+	if (sinbeta > 0.0)
+		powsinbeta = (float)pow(sinbeta, s2);
 	else
-		powsinbeta = (float) - pow(- sinbeta,s2);
+		powsinbeta = (float)-pow(-sinbeta, s2);
 
 	return(R*powcosalfa*powsinbeta);
 }
@@ -162,41 +162,41 @@ void igCreateSolidQuadricObject(int pu, int pv, float uMax, float vMax, float R,
 	inc_v = vMax / pv;
 	for (j = 0; j <= pv; j++) {
 		glBegin(GL_TRIANGLE_STRIP);
-			for (i = 0; i <= pu; i++)
-			{
-				//glTexCoord(u, v);
-				x = xSuperQuadric(u, v, R, s1, s2);
-				y = ySuperQuadric(u, v, R, s1, s2);
-				z = zSuperQuadric(u, v, R, s1, s2);
+		for (i = 0; i <= pu; i++)
+		{
+			glTexCoord2d(u, v);
+			x = xSuperQuadric(u, v, R, s1, s2);
+			y = ySuperQuadric(u, v, R, s1, s2);
+			z = zSuperQuadric(u, v, R, s1, s2);
 
-				xx = nxSuperQuadric(u, v, R, s1, s2);
-				yy = nySuperQuadric(u, v, R, s1, s2);
-				zz = nzSuperQuadric(u, v, R, s1, s2);
+			xx = nxSuperQuadric(u, v, R, s1, s2);
+			yy = nySuperQuadric(u, v, R, s1, s2);
+			zz = nzSuperQuadric(u, v, R, s1, s2);
 
-				glNormal3f(xx, yy, zz);
-				glVertex3f(x, y, z);
+			glNormal3f(xx, yy, zz);
+			glVertex3f(x, y, z);
 
-				//glTexCoord(u, v+inc_v);
-				x = xSuperQuadric(u, v + inc_v, R, s1, s2);
-				y = ySuperQuadric(u, v + inc_v, R, s1, s2);
-				z = zSuperQuadric(u, v + inc_v, R, s1, s2);
+			glTexCoord2d(u, v + inc_v);
+			x = xSuperQuadric(u, v + inc_v, R, s1, s2);
+			y = ySuperQuadric(u, v + inc_v, R, s1, s2);
+			z = zSuperQuadric(u, v + inc_v, R, s1, s2);
 
-				xx = nxSuperQuadric(u, v, R, s1, s2);
-				yy = nySuperQuadric(u, v, R, s1, s2);
-				zz = nzSuperQuadric(u, v, R, s1, s2);
+			xx = nxSuperQuadric(u, v, R, s1, s2);
+			yy = nySuperQuadric(u, v, R, s1, s2);
+			zz = nzSuperQuadric(u, v, R, s1, s2);
 
-				glNormal3f(xx, yy, zz);
-				glVertex3f(x, y, z);
+			glNormal3f(xx, yy, zz);
+			glVertex3f(x, y, z);
 
-				u = u + inc_u;
-			}
+			u = u + inc_u;
+		}
 		glEnd();
 		v = v + inc_v;
 	}
 
 }
 
-void igWireCube() 
+void igWireCube()
 {
 	float p0[3] = { -0.5f, -0.5f, 0.5f };
 	float p1[3] = { -0.5f, 0.5f, 0.5f };
@@ -209,89 +209,36 @@ void igWireCube()
 
 
 	glBegin(GL_LINE_STRIP);
-		glVertex3fv(p0);
-		glVertex3fv(p1);
-		glVertex3fv(p2);
-		glVertex3fv(p3);
-		glVertex3fv(p0);
-		glVertex3fv(p4);
-		glVertex3fv(p5);
-		glVertex3fv(p6);
-		glVertex3fv(p7);
-		glVertex3fv(p4);
+	glVertex3fv(p0);
+	glVertex3fv(p1);
+	glVertex3fv(p2);
+	glVertex3fv(p3);
+	glVertex3fv(p0);
+	glVertex3fv(p4);
+	glVertex3fv(p5);
+	glVertex3fv(p6);
+	glVertex3fv(p7);
+	glVertex3fv(p4);
 	glEnd();
 
 	glBegin(GL_LINE_STRIP);
-		glVertex3fv(p1);
-		glVertex3fv(p5);
+	glVertex3fv(p1);
+	glVertex3fv(p5);
 	glEnd();
 
 	glBegin(GL_LINE_STRIP);
-		glVertex3fv(p2);
-		glVertex3fv(p6);
+	glVertex3fv(p2);
+	glVertex3fv(p6);
 	glEnd();
 
 	glBegin(GL_LINE_STRIP);
-		glVertex3fv(p3);
-		glVertex3fv(p7);
+	glVertex3fv(p3);
+	glVertex3fv(p7);
 	glEnd();
 
 }
 
-void igSolidCubo(void)
-{
-	float p0[3] = { -0.5f, -0.5f, 0.5f };
-	float p1[3] = { -0.5f, 0.5f, 0.5f };
-	float p2[3] = { 0.5f, 0.5f, 0.5f };
-	float p3[3] = { 0.5f, -0.5f, 0.5f };
-	float p4[3] = { -0.5f, -0.5f, -0.5f };
-	float p5[3] = { -0.5f, 0.5f, -0.5f };
-	float p6[3] = { 0.5f, 0.5f, -0.5f };
-	float p7[3] = { 0.5f, -0.5f, -0.5f };
-
-
-	glBegin(GL_TRIANGLE_STRIP);
-		glNormal3fv(p2);
-		glVertex3fv(p2);
-		glNormal3fv(p3);
-		glVertex3fv(p3);
-		glNormal3fv(p1);
-		glVertex3fv(p1);
-		glNormal3fv(p0);
-		glVertex3fv(p0);
-		glNormal3fv(p5);
-		glVertex3fv(p5);
-		glNormal3fv(p4);
-		glVertex3fv(p4);
-		glNormal3fv(p6);
-		glVertex3fv(p6);
-		glNormal3fv(p7);
-		glVertex3fv(p7);
-		glNormal3fv(p2);
-		glVertex3fv(p2);
-		glNormal3fv(p3);
-		glVertex3fv(p3);
-		glNormal3fv(p0);
-		glVertex3fv(p0);
-		glNormal3fv(p7);
-		glVertex3fv(p7);
-		glNormal3fv(p4);
-		glVertex3fv(p4);
-	glEnd();
-
-	glBegin(GL_TRIANGLE_STRIP);
-		glNormal3fv(p1);
-		glVertex3fv(p1);
-		glNormal3fv(p5);
-		glVertex3fv(p5);
-		glNormal3fv(p2);
-		glVertex3fv(p2);
-		glNormal3fv(p6);
-		glVertex3fv(p6);
-	glEnd();
-}
-
-void igSolidCubo_2(void)  /* s1 y s2 a 1 */
+void igSolidCubo(void)  /* s1 y s2 a 1 */
 {
 
 	float p0[3] = { -0.5f, -0.5f, -0.5f };
@@ -305,45 +252,69 @@ void igSolidCubo_2(void)  /* s1 y s2 a 1 */
 
 	//TRASERA
 	glBegin(GL_QUADS);
-	glNormal3f(0, 0, -1);
+	glNormal3f(0.0f, 0.0f, -1.0f);
+	glTexCoord2d(0, 0);
 	glVertex3fv(p0);
+	glTexCoord2d(0, -1);
 	glVertex3fv(p1);
+	glTexCoord2d(-1, -1);
 	glVertex3fv(p2);
+	glTexCoord2d(-1, 0);
 	glVertex3fv(p3);
 
 	//DERECHA
-	glNormal3f(1, 0, 0);
+	glNormal3f(1.0f, 0.0f, 0.0f);
+	glTexCoord2d(-1, 0);
 	glVertex3fv(p3);
+	glTexCoord2d(-1, -1);
 	glVertex3fv(p2);
+	glTexCoord2d(0, -1);
 	glVertex3fv(p6);
+	glTexCoord2d(0, 0);
 	glVertex3fv(p7);
 
 	//IZQUIERDA
-	glNormal3f(-1, 0, 0);
+	glNormal3f(-1.0f, 0.0f, 0.0f);
+	glTexCoord2d(-1, 0);
 	glVertex3fv(p4);
+	glTexCoord2d(-1, -1);
 	glVertex3fv(p5);
+	glTexCoord2d(0, -1);
 	glVertex3fv(p1);
+	glTexCoord2d(0, 0);
 	glVertex3fv(p0);
 
 	//FRONTAL
-	glNormal3f(0, 0, 1);
+	glNormal3f(0.0f, 0.0f, 1.0f);
+	glTexCoord2d(-1, 0);
 	glVertex3fv(p7);
+	glTexCoord2d(-1, -1);
 	glVertex3fv(p6);
+	glTexCoord2d(0, -1);
 	glVertex3fv(p5);
+	glTexCoord2d(0, 0);
 	glVertex3fv(p4);
 
 	//TOP
-	glNormal3f(0, 1, 0);
+	glNormal3f(0.0f, 1.0f, 0.0f);
+	glTexCoord2d(0, -1);
 	glVertex3fv(p1);
+	glTexCoord2d(0, 0);
 	glVertex3fv(p5);
+	glTexCoord2d(-1, 0);
 	glVertex3fv(p6);
+	glTexCoord2d(-1, -1);
 	glVertex3fv(p2);
 
 	//BOTTOM
-	glNormal3f(0, -1, 0);
+	glNormal3f(0.0f, -1.0f, 0.0f);
+	glTexCoord2d(-1, 0);
 	glVertex3fv(p3);
+	glTexCoord2d(-1, -1);
 	glVertex3fv(p7);
+	glTexCoord2d(0, -1);
 	glVertex3fv(p4);
+	glTexCoord2d(0, 0);
 	glVertex3fv(p0);
 
 	glEnd();
@@ -411,7 +382,6 @@ void igSolidCilynder(GLfloat radius, GLfloat height)
 	GLfloat angle = 0.0;
 	GLfloat angle_stepsize = 0.1;
 
-	/** Draw the tube */
 	glBegin(GL_QUAD_STRIP);
 	angle = 0.0;
 	while (angle < 2 * PI) {
@@ -429,7 +399,6 @@ void igSolidCilynder(GLfloat radius, GLfloat height)
 	glVertex3f(radius, 0.0, 0.0);
 	glEnd();
 
-	/** Draw the circle on top of cylinder */
 	glBegin(GL_POLYGON);
 	angle = 0.0;
 	while (angle < 2 * PI) {
@@ -444,22 +413,22 @@ void igSolidCilynder(GLfloat radius, GLfloat height)
 	glEnd();
 }
 
-void Arco() 
+void Arco()
 {
 	glPushMatrix();
-		glTranslatef(-0.2, 0.0, 0.0);
-		glScalef(0.1, 0.5, 0.1);
-		igWireCube(1, 1);
+	glTranslatef(-0.2, 0.0, 0.0);
+	glScalef(0.1, 0.5, 0.1);
+	igWireCube(1, 1);
 	glPopMatrix();
 	glPushMatrix();
-		glTranslatef(0.2, 0.0, 0.0);
-		glScalef(0.1, 0.5, 0.1);
-		igWireCube(1, 1);
+	glTranslatef(0.2, 0.0, 0.0);
+	glScalef(0.1, 0.5, 0.1);
+	igWireCube(1, 1);
 	glPopMatrix();
 	glPushMatrix();
-		glTranslatef(0.0, 0.2, 0.0);
-		glScalef(0.5, 0.1, 0.1);
-		igWireCube(1, 1);
+	glTranslatef(0.0, 0.2, 0.0);
+	glScalef(0.5, 0.1, 0.1);
+	igWireCube(1, 1);
 	glPopMatrix();
 }
 
