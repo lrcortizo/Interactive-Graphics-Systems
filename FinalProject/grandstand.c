@@ -76,47 +76,42 @@ void grandstandStep(float p0[3], float p1[3], float p2[3], float p3[3], float p4
 		glTexCoord2d(0, 0);
 		glVertex3fv(p0);
 
-		/*
-		Declarar rodas las variables al principio
-		y copiar y pegar de nuevo el cubo inicial
-		Y sustituir los valores pX por lefX/rightX
-		*/
 		//LEFT WALL
-		//BACK
 
 		glColor3f(1.0, 1.0, 0.0, 1.0);
 
 		float left0[3] = { p0[0] - 0.1, p0[1], p0[2] };
 		float left1[3] = { p1[0] - 0.1, p1[1] + 0.7, p1[2] };
 		float left2[3] = { p1[0], p1[1] + 0.7, p1[2] };
+		float left3[3] = { p0[0], p0[1], p0[2] };
+		float left4[3] = { p4[0] - 0.1, p4[1], p4[2] };
+		float left5[3] = { p5[0] - 0.1, p5[1] + 0.5, p5[2] };
+		float left6[3] = { p5[0], p5[1] + 0.5, p5[2] };
+		float left7[3] = { p4[0], p4[1], p4[2] };
 
+		//BACK
 		glNormal3f(0.0f, 0.0f, -1.0f);
-		glTexCoord2d(0, -1);
-		glVertex3fv(left0);
-		glTexCoord2d(-1, -1);
-		glVertex3fv(left1);
-		glTexCoord2d(0, -1);
-		glVertex3fv(left2);
 		glTexCoord2d(0, 0);
-		glVertex3fv(p0);
+		glVertex3fv(left0);
+		glTexCoord2d(0, -1);
+		glVertex3fv(left1);
+		glTexCoord2d(-1, -1);
+		glVertex3fv(left2);
+		glTexCoord2d(-1, 0);
+		glVertex3fv(left3);
 
 		//RIGHT
-		float left6[3] = { p5[0], p5[1] + 0.5, p5[2] };
-
 		glNormal3f(1.0f, 0.0f, 0.0f);
 		glTexCoord2d(-1, 0);
-		glVertex3fv(p0);
+		glVertex3fv(left3);
 		glTexCoord2d(-1, -1);
 		glVertex3fv(left2);
 		glTexCoord2d(0, -1);
 		glVertex3fv(left6);
 		glTexCoord2d(0, 0);
-		glVertex3fv(p4);
+		glVertex3fv(left7);
 
 		//LEFT
-		float left4[3] = { p4[0] - 0.1, p4[1], p4[2] };
-		float left5[3] = { p5[0] - 0.1, p5[1] + 0.5, p5[2] };
-
 		glNormal3f(-1.0f, 0.0f, 0.0f);
 		glTexCoord2d(-1, 0);
 		glVertex3fv(left4);
@@ -130,7 +125,7 @@ void grandstandStep(float p0[3], float p1[3], float p2[3], float p3[3], float p4
 		//FRONT
 		glNormal3f(0.0f, 0.0f, 1.0f);
 		glTexCoord2d(-1, 0);
-		glVertex3fv(p4);
+		glVertex3fv(left7);
 		glTexCoord2d(-1, -1);
 		glVertex3fv(left6);
 		glTexCoord2d(0, -1);
@@ -152,9 +147,9 @@ void grandstandStep(float p0[3], float p1[3], float p2[3], float p3[3], float p4
 		//BOTTOM
 		glNormal3f(0.0f, -1.0f, 0.0f);
 		glTexCoord2d(-1, 0);
-		glVertex3fv(p0);
+		glVertex3fv(left3);
 		glTexCoord2d(-1, -1);
-		glVertex3fv(p4);
+		glVertex3fv(left7);
 		glTexCoord2d(0, -1);
 		glVertex3fv(left4);
 		glTexCoord2d(0, 0);
@@ -162,14 +157,19 @@ void grandstandStep(float p0[3], float p1[3], float p2[3], float p3[3], float p4
 
 		//RIGHT WALL
 		
-		//BACK
-		float right3[3] = { p3[0] + 0.1, p3[1], p3[2] };
-		float right2[3] = { p2[0] + 0.1, p2[1] + 0.7, p2[2] };
+		float right0[3] = { p3[0], p3[1], p3[2] };
 		float right1[3] = { p2[0], p2[1] + 0.7, p2[2] };
+		float right2[3] = { p2[0] + 0.1, p2[1] + 0.7, p2[2] };
+		float right3[3] = { p3[0] + 0.1, p3[1], p3[2] };
+		float right4[3] = { p7[0], p7[1], p7[2] };
+		float right5[3] = { p6[0], p6[1] + 0.5, p6[2] };
+		float right6[3] = { p6[0] + 0.1, p6[1] + 0.5, p6[2] };
+		float right7[3] = { p7[0] + 0.1, p7[1], p7[2] };
 
+		//BACK
 		glNormal3f(0.0f, 0.0f, -1.0f);
 		glTexCoord2d(0, 0);
-		glVertex3fv(p3);
+		glVertex3fv(right0);
 		glTexCoord2d(0, -1);
 		glVertex3fv(right1);
 		glTexCoord2d(-1, -1);
@@ -178,9 +178,6 @@ void grandstandStep(float p0[3], float p1[3], float p2[3], float p3[3], float p4
 		glVertex3fv(right3);
 
 		//RIGHT
-		float right6[3] = { p6[0] + 0.1, p6[1], p6[2] };
-		float right7[3] = { p7[0] + 0.1, p7[1], p7[2] };
-
 		glNormal3f(1.0f, 0.0f, 0.0f);
 		glTexCoord2d(-1, 0);
 		glVertex3fv(right3);
@@ -192,17 +189,15 @@ void grandstandStep(float p0[3], float p1[3], float p2[3], float p3[3], float p4
 		glVertex3fv(right7);
 
 		//LEFT
-		float right5[3] = { p6[0], p6[1] + 0.5, p6[2] };
-
 		glNormal3f(-1.0f, 0.0f, 0.0f);
 		glTexCoord2d(-1, 0);
-		glVertex3fv(p7);
+		glVertex3fv(right4);
 		glTexCoord2d(-1, -1);
 		glVertex3fv(right5);
 		glTexCoord2d(0, -1);
 		glVertex3fv(right1);
 		glTexCoord2d(0, 0);
-		glVertex3fv(p3);
+		glVertex3fv(right0);
 
 		//FRONT
 		glNormal3f(0.0f, 0.0f, 1.0f);
@@ -213,18 +208,18 @@ void grandstandStep(float p0[3], float p1[3], float p2[3], float p3[3], float p4
 		glTexCoord2d(0, -1);
 		glVertex3fv(right5);
 		glTexCoord2d(0, 0);
-		glVertex3fv(p7);
+		glVertex3fv(right4);
 
 		//TOP
 		glNormal3f(0.0f, 1.0f, 0.0f);
 		glTexCoord2d(0, -1);
-		glVertex3fv(right6);
-		glTexCoord2d(0, 0);
-		glVertex3fv(right2);
-		glTexCoord2d(-1, 0);
 		glVertex3fv(right1);
-		glTexCoord2d(-1, -1);
+		glTexCoord2d(0, 0);
 		glVertex3fv(right5);
+		glTexCoord2d(-1, 0);
+		glVertex3fv(right6);
+		glTexCoord2d(-1, -1);
+		glVertex3fv(right2);
 
 		//BOTTOM
 		glNormal3f(0.0f, -1.0f, 0.0f);
@@ -233,9 +228,9 @@ void grandstandStep(float p0[3], float p1[3], float p2[3], float p3[3], float p4
 		glTexCoord2d(-1, -1);
 		glVertex3fv(right7);
 		glTexCoord2d(0, -1);
-		glVertex3fv(p7);
+		glVertex3fv(right4);
 		glTexCoord2d(0, 0);
-		glVertex3fv(p3);
+		glVertex3fv(right0);
 
 		glEnd();
 	//	glEndList();
