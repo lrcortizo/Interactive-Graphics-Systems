@@ -346,3 +346,114 @@ void outsideDoors(void)
 		glEndList();
 	}
 }
+
+void insideDoors(void)
+{
+	insidedoors = glGenLists(1);
+	if (insidedoors != 0)
+	{
+		glNewList(insidedoors, GL_COMPILE);
+
+		//back
+		glPushMatrix();
+		glTranslatef(5.30f, 0.25f, -5.75);
+		glRotatef(48.0f, 0.0f, 1.0f, 0.0f);
+		door();
+		glPopMatrix();
+
+		glPushMatrix();
+		glTranslatef(10.70f, 0.25f, -11.75);
+		glRotatef(48.0f, 0.0f, 1.0f, 0.0f);
+		door();
+		glPopMatrix();
+
+		glPushMatrix();
+		glTranslatef(-5.30f, 0.25f, -5.75);
+		glRotatef(-48.0f, 0.0f, 1.0f, 0.0f);
+		door();
+		glPopMatrix();
+
+		glPushMatrix();
+		glTranslatef(-10.70f, 0.25f, -11.75);
+		glRotatef(-48.0f, 0.0f, 1.0f, 0.0f);
+		door();
+		glPopMatrix();
+
+		//front
+		glPushMatrix();
+		glTranslatef(5.30f, 0.25f, 5.75);
+		glRotatef(132.0f, 0.0f, 1.0f, 0.0f);
+		door();
+		glPopMatrix();
+
+		glPushMatrix();
+		glTranslatef(10.70f, 0.25f, 11.75);
+		glRotatef(132.0f, 0.0f, 1.0f, 0.0f);
+		door();
+		glPopMatrix();
+
+		glPushMatrix();
+		glTranslatef(-5.30f, 0.25f, 5.75);
+		glRotatef(-132.0f, 0.0f, 1.0f, 0.0f);
+		door();
+		glPopMatrix();
+
+		glPushMatrix();
+		glTranslatef(-10.70f, 0.25f, 11.75);
+		glRotatef(-132.0, 0.0f, 1.0f, 0.0f);
+		door();
+		glPopMatrix();
+
+		//left
+		glPushMatrix();
+		glTranslatef(-5.75f, 0.25f, 5.30);
+		glRotatef(42.0f, 0.0f, 1.0f, 0.0f);
+		door();
+		glPopMatrix();
+
+		glPushMatrix();
+		glTranslatef(-11.75f, 0.25f, 10.70f);
+		glRotatef(42.0f, 0.0f, 1.0f, 0.0f);
+		door();
+		glPopMatrix();
+
+		glPushMatrix();
+		glTranslatef(-5.75f, 0.25f, -5.30);
+		glRotatef(138.0f, 0.0f, 1.0f, 0.0f);
+		door();
+		glPopMatrix();
+
+		glPushMatrix();
+		glTranslatef(-11.75f, 0.25f, -10.70f);
+		glRotatef(138.0f, 0.0f, 1.0f, 0.0f);
+		door();
+		glPopMatrix();
+
+		//right
+		glPushMatrix();
+		glTranslatef(5.75f, 0.25f, 5.30);
+		glRotatef(-42.0f, 0.0f, 1.0f, 0.0f);
+		door();
+		glPopMatrix();
+
+		glPushMatrix();
+		glTranslatef(11.75f, 0.25f, 10.70f);
+		glRotatef(-42.0f, 0.0f, 1.0f, 0.0f);
+		door();
+		glPopMatrix();
+
+		glPushMatrix();
+		glTranslatef(5.75f, 0.25f, -5.30);
+		glRotatef(-138.0f, 0.0f, 1.0f, 0.0f);
+		door();
+		glPopMatrix();
+
+		glPushMatrix();
+		glTranslatef(11.75f, 0.25f, -10.70f);
+		glRotatef(-138.0f, 0.0f, 1.0f, 0.0f);
+		door();
+		glPopMatrix();
+
+		glEndList();
+	}
+}

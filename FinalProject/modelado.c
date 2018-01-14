@@ -117,11 +117,12 @@ void IniciaDisplayLists(void)
 	ringCornerPads();
 	ringTurnbuckles();
 	ringRopes();
-	//placeGrandstands();
+	placeGrandstands();
 	//grandstandSeats();
 	stadiumFloor();
 	stadiumWalls();
 	stadiumColumns();
 	ringStairs();
 	outsideDoors();
+	insideDoors();
 }

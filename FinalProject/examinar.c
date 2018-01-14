@@ -217,12 +217,13 @@ void Dibuja (void)
 	//glCallList(turnbuckles);
 	//glCallList(ropes);
 	//glCallList(stairs);
-	//glCallList(pgrandstands);
+	glCallList(pgrandstands);
 	//glCallList(gseats);
 	//glCallList(sfloor);
 	glCallList(walls);
-	glCallList(columns);
+	//glCallList(columns);
 	glCallList(outsidedoors);
+	glCallList(insidedoors);
 
 	/* Utiliza la funcion de la glut que intercambia los buffers */
 	glutSwapBuffers ();
