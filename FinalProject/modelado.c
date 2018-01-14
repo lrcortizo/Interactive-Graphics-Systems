@@ -117,8 +117,9 @@ void IniciaDisplayLists(void)
 	ringCornerPads();
 	ringTurnbuckles();
 	ringRopes();
-	placeGrandstands();
-	grandstandSeats();
+	//placeGrandstands();
+	//grandstandSeats();
 	stadiumFloor();
 	stadiumWalls();
+	stadiumColumns();
 }

@@ -375,6 +375,11 @@ void igSolidSemiSphere(int pu, int pv)
 
 }
 
+void igSolidCilynder2(int pu, int pv)
+{
+	igCreateSolidQuadricObject(pu, pv, 1.0, 1.0, 1.0, 0.0, 1.0);
+}
+
 void igSolidCilynder(GLfloat radius, GLfloat height)
 {
 	GLfloat x = 0.0;

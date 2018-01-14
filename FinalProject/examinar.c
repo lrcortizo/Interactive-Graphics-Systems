@@ -216,10 +216,11 @@ void Dibuja (void)
 	//glCallList(corner_pads);
 	//glCallList(turnbuckles);
 	//glCallList(ropes);
-	glCallList(pgrandstands);
-	glCallList(gseats);
+	//glCallList(pgrandstands);
+	//glCallList(gseats);
 	glCallList(sfloor);
 	glCallList(walls);
+	glCallList(columns);
 
 	/* Utiliza la funcion de la glut que intercambia los buffers */
 	glutSwapBuffers ();
