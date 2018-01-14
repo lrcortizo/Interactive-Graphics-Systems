@@ -15,7 +15,7 @@ void ringBase(void)
 			glScalef(3.5, 0.5, 3.5);
 			glColor3f(0.0, 0.0, 1.0, 1.0);
 			igSolidCubo();
-			glPopMatrix();
+		glPopMatrix();
 		glEndList();
 	}
 }
@@ -231,6 +231,53 @@ void ringRopes(void)
 
 			y_pos += 0.165;
 		}
+		glEndList();
+	}
+}
+
+void ringStairs(void)
+{
+	float y_scale = 0.1;
+	float x_pos = 2.10f;
+	float y_pos = -0.2f;
+
+	stairs = glGenLists(1);
+	if (stairs != 0)
+	{
+		glNewList(stairs, GL_COMPILE);
+
+		for (int i = 0; i < 4; i++)
+		{
+			glPushMatrix();
+				glTranslatef(x_pos, y_pos, 1.50f);
+				glScalef(0.1, y_scale, 0.3);
+				glColor3f(0.0, 1.0, 1.0, 1.0);
+				igSolidCubo();
+			glPopMatrix();
+
+			y_scale += 0.1;
+			x_pos -= 0.1;
+			y_pos += 0.05;
+		}
+
+		y_scale = 0.1;
+		x_pos = -2.10f;
+		y_pos = -0.2f;
+
+		for (int i = 0; i < 4; i++)
+		{
+			glPushMatrix();
+				glTranslatef(x_pos, y_pos, -1.50f);
+				glScalef(0.1, y_scale, 0.3);
+				glColor3f(0.0, 1.0, 1.0, 1.0);
+				igSolidCubo();
+			glPopMatrix();
+
+			y_scale += 0.1;
+			x_pos += 0.1;
+			y_pos += 0.05;
+		}
+
 		glEndList();
 	}
 }

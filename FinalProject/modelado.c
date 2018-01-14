@@ -122,4 +122,5 @@ void IniciaDisplayLists(void)
 	stadiumFloor();
 	stadiumWalls();
 	stadiumColumns();
+	ringStairs();
 }
