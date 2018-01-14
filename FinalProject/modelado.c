@@ -123,4 +123,5 @@ void IniciaDisplayLists(void)
 	stadiumWalls();
 	stadiumColumns();
 	ringStairs();
+	outsideDoors();
 }

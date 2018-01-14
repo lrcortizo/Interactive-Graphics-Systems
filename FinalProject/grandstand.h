@@ -3,7 +3,7 @@
 
 #include "glut.h"
 
-GLuint steps, grandstands, pgrandstands, seats, gseats;
+GLuint pgrandstands, gseats;
 
 void grandstandStep(float p0[3], float p1[3], float p2[3], float p3[3], float p4[3], float p5[3], float p6[3], float p7[3]);
 void stadiumGrandstands(void);

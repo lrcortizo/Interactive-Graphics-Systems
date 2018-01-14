@@ -211,17 +211,18 @@ void Dibuja (void)
 	//igSolidDado(10, 10);
 	//igSolidCone(10,10);
 
-	glCallList(base);
+	//glCallList(base);
 	//glCallList(posts);
 	//glCallList(corner_pads);
 	//glCallList(turnbuckles);
 	//glCallList(ropes);
+	//glCallList(stairs);
 	//glCallList(pgrandstands);
 	//glCallList(gseats);
-	glCallList(sfloor);
+	//glCallList(sfloor);
 	glCallList(walls);
 	glCallList(columns);
-	glCallList(stairs);
+	glCallList(outsidedoors);
 
 	/* Utiliza la funcion de la glut que intercambia los buffers */
 	glutSwapBuffers ();

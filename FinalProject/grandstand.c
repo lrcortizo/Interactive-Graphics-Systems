@@ -2,12 +2,9 @@
 #include "glig.h"
 #include "grandstand.h"
 
+//Step of grandstand with walls
 void grandstandStep(float p0[3], float p1[3], float p2[3], float p3[3], float p4[3], float p5[3], float p6[3], float p7[3])
 {
-	//steps = glGenLists(1);
-//	if (steps != 0)
-//	{
-//		glNewList(steps, GL_COMPILE);
 		glBegin(GL_QUADS);
 		glColor3f(0.0, 0.5, 0.0, 1.0);
 		//BACK
@@ -233,10 +230,10 @@ void grandstandStep(float p0[3], float p1[3], float p2[3], float p3[3], float p4
 		glVertex3fv(right0);
 
 		glEnd();
-	//	glEndList();
-//	}
 }
 
+
+//Looping the steps to build the grandstand
 void stadiumGrandstands(void)
 {
 	float p0[3] = { -3.85f, -0.25f, -0.5f };
@@ -248,10 +245,6 @@ void stadiumGrandstands(void)
 	float p6[3] = { 3.4f, -0.05f, 0.0f };
 	float p7[3] = { 3.4f, -0.25f, 0.0f };
 
-	//grandstands = glGenLists(1);
-	//if (grandstands != 0)
-	//{
-	//	glNewList(grandstands, GL_COMPILE);
 		for (int i = 1; i < 36; i++) 
 		{
 			grandstandStep(p0, p1, p2, p3, p4, p5, p6, p7);
@@ -276,10 +269,9 @@ void stadiumGrandstands(void)
 			p7[0] += 0.45;
 			p7[2] -= 0.5;
 		}
-	//	glEndList();
-//	}
 }
 
+//place 4 grandstands in the plane
 void placeGrandstands(void)
 {
 	pgrandstands = glGenLists(1);
@@ -317,13 +309,9 @@ void placeGrandstands(void)
 	}
 }
 
+//seat of grandstands
 void seat(void)
 {
-	//seats = glGenLists(1);
-	//if (seats != 0)
-	//{
-		//glNewList(seats, GL_COMPILE);
-		//base
 		glPushMatrix();
 			glScalef(0.25, 0.02, 0.15);
 			glColor3f(0.0, 1.0, 1.0, 1.0);
@@ -348,11 +336,9 @@ void seat(void)
 			glColor3f(0.0, 1.0, 1.0, 1.0);
 			igSolidSemiSphere(10, 10);
 		glPopMatrix();
-
-	//	glEndList();
-	//}
 }
 
+//Looping seats to place them along the 4 grandstands
 void grandstandSeats(void)
 {
 	gseats = glGenLists(1);
@@ -366,27 +352,58 @@ void grandstandSeats(void)
 		float z_pos = -3.75;
 		float min = -3.15;
 		float max = 3.15;
+		float length = 3.85;
 
 		for (int i = 1; i < 36; i++)
 		{
-
-			while (x_pos < max)
+			//row 12 and 24 without seats
+			if (i != 12 && i!=24)
 			{
-					glPushMatrix();
-					glTranslatef(x_pos, y_pos, z_pos);
-					seat();
-					glPopMatrix();
+				while (x_pos < max)
+				{
+					//columns at points -3.15, 0.0 and 3.15 with stairs instead of seats
+					if ((x_pos < -0.30 || x_pos > 0.30) && (x_pos < -3.45 || x_pos > -2.85) && (x_pos < 2.85 || x_pos > 3.45))
+					{
+						glPushMatrix();
+						glTranslatef(x_pos, y_pos, z_pos);
+						seat();
+						glPopMatrix();
+					}
+					else
+					{
+						//grandstandStairs
+						glPushMatrix();
+						glTranslatef(x_pos, y_pos + 0.05, z_pos - 0.375);
+						glScalef(0.25, 0.1, 0.25);
+						glColor3f(0.0f, 1.0f, 0.0f, 1.0f);
+						igSolidCubo();
+						glPopMatrix();
+					}
 
 					x_pos += 0.35;
+				}
 			}
-			min -= 0.45;
+
+			//if there are space for two seats more in each side
+			if (length + min > 0.9)
+			{
+				min -= 0.7;
+				max += 0.7;
+			}
+			//if there are space for one seat more in each side
+			else if (length + min > 0.6)
+			{
+				min -= 0.35;
+				max += 0.35;
+			}
+			
 			x_pos = min;
 			y_pos += 0.2;
 			z_pos -= 0.5;
-			max += 0.45;
+			length += 0.45;
 		}
 
-		//front
+		/*//front
 		x_pos = -3.15;
 		y_pos = -0.05;
 		z_pos = 3.75;
@@ -462,7 +479,7 @@ void grandstandSeats(void)
 			y_pos += 0.2;
 			x_pos += 0.5;
 			max += 0.45;
-		}
+		}*/
 
 		glEndList();
 	}

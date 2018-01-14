@@ -211,3 +211,138 @@ void stadiumColumns(void)
 		glEndList();
 	}
 }
+
+void door(void)
+{
+	glPushMatrix();
+		glScalef(1.0f, 1.0f, 0.0f);
+		glColor3f(0.0f, 0.0f, 1.0f, 1.0f);
+		igSolidCubo();
+	glPopMatrix();
+	
+	//lock
+	glPushMatrix();
+		glTranslatef(-0.4f, 0.0f, 0.01f);
+		glScalef(0.04f, 0.15f, 0.02f);
+		glColor3f(1.0f, 0.0f, 0.0f, 1.0f);
+		igSolidCubo();
+	glPopMatrix();
+
+	glPushMatrix();
+		glTranslatef(-0.4f, 0.0f, 0.0135f);
+		glScalef(0.01f, 0.01f, 0.025f);
+		glColor3f(1.0f, 0.0f, 0.0f, 1.0f);
+		igSolidCubo();
+	glPopMatrix();
+
+	glPushMatrix();
+		glTranslatef(-0.375f, 0.0f, 0.035f);
+		glScalef(0.05f, 0.01f, 0.01f);
+		glColor3f(1.0f, 0.0f, 0.0f, 1.0f);
+		igSolidCubo();
+	glPopMatrix();
+}
+
+void outsideDoors(void)
+{
+	outsidedoors = glGenLists(1);
+	if (outsidedoors != 0)
+	{
+		glNewList(outsidedoors, GL_COMPILE);
+
+		//front
+		//doors
+		float pos = -5.0;
+
+		for (int i = 0; i < 3; i++)
+		{
+			glPushMatrix();
+			glTranslatef(pos, 0.25f, 26.2775f);
+			door();
+			glPopMatrix();
+
+			pos += 5.0;
+		}
+
+		//window
+		glPushMatrix();
+		glTranslatef(0.0f, 2.25f, 26.2775f);
+		glScalef(12.5f, 1.0f, 0.0f);
+		glColor3f(1.0f, 1.0f, 1.0f, 1.0f);
+		igSolidCubo();
+		glPopMatrix();
+
+		//back
+		//doors
+		pos = -5.0;
+
+		for (int i = 0; i < 3; i++)
+		{
+			glPushMatrix();
+			glTranslatef(pos, 0.25f, -26.2775f);
+			glRotatef(180.0f, 0.0f, 1.0f, 0.0f);
+			door();
+			glPopMatrix();
+
+			pos += 5.0;
+		}
+
+		//window
+		glPushMatrix();
+		glTranslatef(0.0f, 2.25f, -26.2775f);
+		glScalef(12.5f, 1.0f, 0.0f);
+		glColor3f(1.0f, 1.0f, 1.0f, 1.0f);
+		igSolidCubo();
+		glPopMatrix();
+
+		//right
+		//doors
+		pos = -5.0;
+
+		for (int i = 0; i < 3; i++)
+		{
+			glPushMatrix();
+			glTranslatef(26.2775f, 0.25f, pos);
+			glRotatef(90.0f, 0.0f, 1.0f, 0.0f);
+			door();
+			glPopMatrix();
+
+			pos += 5.0;
+		}
+
+		//window
+		glPushMatrix();
+		glTranslatef(26.2775f, 2.25f, 0.0f);
+		glRotatef(90.0f, 0.0f, 1.0f, 0.0f);
+		glScalef(12.5f, 1.0f, 0.0f);
+		glColor3f(1.0f, 1.0f, 1.0f, 1.0f);
+		igSolidCubo();
+		glPopMatrix();
+
+		//left
+		//doors
+		pos = -5.0;
+
+		for (int i = 0; i < 3; i++)
+		{
+			glPushMatrix();
+			glTranslatef(-26.2775f, 0.25f, pos);
+			glRotatef(90.0f, 0.0f, 1.0f, 0.0f);
+			door();
+			glPopMatrix();
+
+			pos += 5.0;
+		}
+
+		//window
+		glPushMatrix();
+		glTranslatef(-26.2775f, 2.25f, 0.0f);
+		glRotatef(90.0f, 0.0f, 1.0f, 0.0f);
+		glScalef(12.5f, 1.0f, 0.0f);
+		glColor3f(1.0f, 1.0f, 1.0f, 1.0f);
+		igSolidCubo();
+		glPopMatrix();
+
+		glEndList();
+	}
+}
